@@ -14,28 +14,28 @@ import javax.persistence.Id;
 
 /**
  *
- * @author cristian_caicedo
+ * @author jorge
  */
-@Entity (name = "Animal")
-public class AnimalEntity implements Serializable {
+@Entity (name = "Show")
+public class ShowEntity implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_animal")
-    private Long idAnimal;
+    @Column(name = "id_show")
+    private Long idShow;
 
     /**
      * Constructor
      */
-    public AnimalEntity() {
-    }
-    
-    public Long getIdAnimal() {
-        return idAnimal;
+    public ShowEntity() {
     }
 
-    public void setIdAnimal(Long idAnimal) {
-        this.idAnimal = idAnimal;
+    public Long getIdShow() {
+        return idShow;
+    }
+
+    public void setIdShow(Long idShow) {
+        this.idShow = idShow;
     }
     
 }

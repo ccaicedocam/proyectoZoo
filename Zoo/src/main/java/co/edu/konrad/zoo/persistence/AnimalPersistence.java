@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.konrad.zoo.entities;
+package co.edu.konrad.zoo.persistence;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
+import javax.ejb.Stateless;
 
 /**
  *
  * @author cristian_caicedo
  */
-@Entity (name = "Animal")
-public class AnimalEntity implements Serializable {
+@Stateless
+public class AnimalPersistence {
     
 }

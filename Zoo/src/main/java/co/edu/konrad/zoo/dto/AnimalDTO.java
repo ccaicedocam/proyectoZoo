@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.konrad.zoo.entities;
-
-import java.io.Serializable;
-import javax.persistence.Entity;
+package co.edu.konrad.zoo.dto;
 
 /**
  *
  * @author cristian_caicedo
  */
-@Entity (name = "Animal")
-public class AnimalEntity implements Serializable {
+public class AnimalDTO {
     
 }

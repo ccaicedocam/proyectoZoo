@@ -20,7 +20,7 @@ import javax.persistence.ManyToOne;
  * @author jorge
  */
 @Entity
-public class comidaAnimal implements Serializable{
+public class comidaAnimalEntity implements Serializable{
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
@@ -36,7 +36,7 @@ public class comidaAnimal implements Serializable{
     
     @ManyToOne
     @JoinColumn (name = "id_comida")
-    private comida idComida;
+    private comidaEntity idComida;
 
     public Long getIdComidaAnimal() {
         return idComidaAnimal;
@@ -62,11 +62,11 @@ public class comidaAnimal implements Serializable{
         this.horaComida = horaComida;
     }
 
-    public comida getIdComida() {
+    public comidaEntity getIdComida() {
         return idComida;
     }
 
-    public void setIdComida(comida idComida) {
+    public void setIdComida(comidaEntity idComida) {
         this.idComida = idComida;
     }
     

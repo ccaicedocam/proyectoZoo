@@ -18,7 +18,7 @@ import javax.persistence.Id;
  */
 
 @Entity
-public class comida implements Serializable{
+public class comidaEntity implements Serializable{
  
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)

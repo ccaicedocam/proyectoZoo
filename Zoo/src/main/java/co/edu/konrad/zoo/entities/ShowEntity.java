@@ -23,11 +23,45 @@ public class ShowEntity implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_show")
     private Long idShow;
+    
+    @Column (name = "Idnombre")
+    private String Idnombre;
+    
+    @Column (name = "Idhora")
+    private String Idhora;
+    
+    @Column (name = "IdEmpleado")
+    private String IdEmpleado;
 
     /**
      * Constructor
      */
     public ShowEntity() {
+        
+    }
+
+    public String getIdnombre() {
+        return Idnombre;
+    }
+
+    public void setIdnombre(String Idnombre) {
+        this.Idnombre = Idnombre;
+    }
+
+    public String getIdhora() {
+        return Idhora;
+    }
+
+    public void setIdhora(String Idhora) {
+        this.Idhora = Idhora;
+    }
+
+    public String getIdEmpleado() {
+        return IdEmpleado;
+    }
+
+    public void setIdEmpleado(String IdEmpleado) {
+        this.IdEmpleado = IdEmpleado;
     }
 
     public Long getIdShow() {

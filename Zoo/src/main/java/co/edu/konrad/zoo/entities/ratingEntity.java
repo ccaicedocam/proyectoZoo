@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
  *
  * @author ASUS-PC
  */
-public class ratingEntiti implements Serializable{
+public class ratingEntity implements Serializable{
     
     @Id
     @Column (name = "id_rating")
@@ -37,7 +37,7 @@ public class ratingEntiti implements Serializable{
     @Column (name = "comentario")
     private String comentario;
     
-    public ratingEntiti (){
+    public ratingEntity (){
         
     }
 

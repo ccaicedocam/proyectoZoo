@@ -17,7 +17,7 @@ import javax.persistence.ManyToOne;
  *
  * @author ASUS-PC
  */
-public class cuidadoAnimalEntiti implements Serializable{
+public class cuidadoAnimalEntity implements Serializable{
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
@@ -26,12 +26,12 @@ public class cuidadoAnimalEntiti implements Serializable{
     
     @ManyToOne
     @JoinColumn(name ="id_animal")
-    private String idAnimal;
+    private AnimalEntity idAnimal;
     
     @Column (name ="id_empleado")
     private String idEmpleado;
     
-    private cuidadoAnimalEntiti(){
+    private cuidadoAnimalEntity(){
         
     }
     public long getIdCuidador() {
@@ -42,11 +42,11 @@ public class cuidadoAnimalEntiti implements Serializable{
         this.idCuidador = idCuidador;
     }
 
-    public String getIdAnimal() {
+    public AnimalEntity getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(String idAnimal) {
+    public void setIdAnimal(AnimalEntity idAnimal) {
         this.idAnimal = idAnimal;
     }
 

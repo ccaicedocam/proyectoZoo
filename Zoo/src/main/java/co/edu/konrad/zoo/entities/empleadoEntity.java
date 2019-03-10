@@ -15,7 +15,7 @@ import javax.persistence.Id;
  *
  * @author ASUS-PC
  */
-public class empleadoEntiti implements Serializable{
+public class empleadoEntity implements Serializable{
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     @Column (name = "id_cod_empleado")
@@ -27,7 +27,7 @@ public class empleadoEntiti implements Serializable{
     @Column (name ="cargo_empleado")
     private String cargoEmpleado;
     
-    private empleadoEntiti(){
+    private empleadoEntity(){
         
     }
 

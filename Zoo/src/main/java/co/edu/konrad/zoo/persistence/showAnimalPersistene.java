@@ -5,7 +5,7 @@
  */
 package co.edu.konrad.zoo.persistence;
 
-import co.edu.konrad.zoo.entities.ShowEntity;
+import co.edu.konrad.zoo.entities.ShowAnimalEntity;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,36 +14,37 @@ import javax.persistence.Query;
 
 /**
  *
- * @author Cristian Caicedo
+ * @author jorge
  */
 @Stateless
-public class ShowPersistence {
- @PersistenceContext (unitName = "zoopu")
-    protected EntityManager ez;
+public class showAnimalPersistene {
     
-    public List<ShowEntity> encontrarTodo(){
-        Query todos = ez.createQuery("select p from ShowEntity p");
+    @PersistenceContext (unitName = "zoopu")
+    protected EntityManager sa;
+    
+    public List<ShowAnimalEntity> encontrarTodo(){
+        Query todos = sa.createQuery("select p from ShowAnimalEntity p");
         return todos.getResultList();
     }
     
     //permite traer en productoEntity el dato de la tabla por medio del id
-    public ShowEntity encontrarPorId(Long id){
-      return ez.find(ShowEntity.class, id);
+    public ShowAnimalEntity encontrarPorId(Long id){
+      return sa.find(ShowAnimalEntity.class, id);
     }
     
     //permite insertar datos a la tabla prodcuto retornando el mismo producto
-    public ShowEntity insertar(ShowEntity entity){
-     ez.persist(entity);
+    public ShowAnimalEntity insertar(ShowAnimalEntity entity){
+     sa.persist(entity);
      return entity;
     }
     
     //permite acutalizar el dato en la tabla
-    public ShowEntity actualizar(ShowEntity entity){
-     return ez.merge(entity);
+    public ShowAnimalEntity actualizar(ShowAnimalEntity entity){
+     return sa.merge(entity);
     }
     
     public void eliminar(Long id){
-      ShowEntity showEliminar = ez.find(ShowEntity.class, id);
-      ez.remove(showEliminar);   
+        ShowAnimalEntity showAnimalEliminar = sa.find(ShowAnimalEntity.class, id);
+      sa.remove(showAnimalEliminar);   
     }
 }

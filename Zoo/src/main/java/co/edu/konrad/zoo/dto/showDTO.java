@@ -64,7 +64,5 @@ public class showDTO {
         showentity.setIdhora(Idhora);
         showentity.setIdEmpleado(IdEmpleado);
         return showentity;
-    }
-    
-    
+    }   
 }

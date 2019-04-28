@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package co.edu.konrad.zoo.dto;
-import co.edu.konrad.zoo.entities.empleadoEntity;
+import co.edu.konrad.zoo.entities.listaEmpleados;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author ASUS-PC
@@ -41,19 +43,26 @@ public class empleadoDTO {
         this.cargoEmpleado = cargoEmpleado;
     }
     
-     public empleadoDTO(empleadoEntity anim) {
+     public empleadoDTO(listaEmpleados anim) {
         this.cargoEmpleado = anim.getCargoEmpleado();
         this.idCodEmpleado = anim.getIdCodEmpleado();
         this.nomEmpleado = anim.getNomEmpleado();
     }
 
-    public empleadoEntity toEntity() {
-        empleadoEntity empleadoE = new empleadoEntity();
+    public listaEmpleados toEntity() {
+        listaEmpleados empleadoE = new listaEmpleados();
         empleadoE.setCargoEmpleado(this.cargoEmpleado);
         empleadoE.setIdCodEmpleado(this.idCodEmpleado);
         empleadoE.setNomEmpleado(this.nomEmpleado);
         return empleadoE;
     }
     
+      public static List<empleadoDTO> toAnimalList(List<listaEmpleados> listaAnimales){
+        List<empleadoDTO> listaAnimalesDTO = new ArrayList<>();
+        for(listaEmpleados entity : listaAnimales){
+            listaAnimalesDTO.add(new empleadoDTO(entity));
+        }
+        return listaAnimalesDTO;
+    }
 
 }

@@ -5,7 +5,7 @@
  */
 package co.edu.konrad.zoo.persistence;
 
-import co.edu.konrad.zoo.entities.empleadoEntity;
+import co.edu.konrad.zoo.entities.listaEmpleados;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -21,29 +21,29 @@ public class empleadoPersistence {
            @PersistenceContext (unitName = "zoopu")
     protected EntityManager ez;
     
-    public List<empleadoEntity> encontrarTodo(){
+    public List<listaEmpleados> encontrarTodo(){
         Query todos = ez.createQuery("select p from empleadoEntity p");
         return todos.getResultList();
     }
     
     //permite traer en productoEntity el dato de la tabla por medio del id
-    public empleadoEntity encontrarPorId(Long id){
-      return ez.find(empleadoEntity.class, id);
+    public listaEmpleados encontrarPorId(Long id){
+      return ez.find(listaEmpleados.class, id);
     }
     
     //permite insertar datos a la tabla prodcuto retornando el mismo producto
-    public empleadoEntity insertar(empleadoEntity entity){
+    public listaEmpleados insertar(listaEmpleados entity){
      ez.persist(entity);
      return entity;
     }
     
     //permite acutalizar el dato en la tabla
-    public empleadoEntity actualizar(empleadoEntity entity){
+    public listaEmpleados actualizar(listaEmpleados entity){
      return ez.merge(entity);
     }
     
     public void eliminar(Long id){
-      empleadoEntity empleadoEliminar = ez.find(empleadoEntity.class, id);
+      listaEmpleados empleadoEliminar = ez.find(listaEmpleados.class, id);
       ez.remove(empleadoEliminar);   
     } 
     

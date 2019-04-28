@@ -6,6 +6,8 @@
 package co.edu.konrad.zoo.dto;
 
 import co.edu.konrad.zoo.entities.cuidadoAnimalEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -57,4 +59,12 @@ public class cuidadoAnimalDTO {
         return animal;
     }
 
+        public static List<cuidadoAnimalDTO> toAnimalList(List<cuidadoAnimalEntity> listaCiudadores){
+        List<cuidadoAnimalDTO> listaAnimalesDTO = new ArrayList<>();
+        for(cuidadoAnimalEntity entity : listaCiudadores){
+            listaAnimalesDTO.add(new cuidadoAnimalDTO(entity));
+        }
+        return listaAnimalesDTO;
+    }
+    
 }

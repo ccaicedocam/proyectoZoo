@@ -5,7 +5,10 @@
  */
 package co.edu.konrad.zoo.dto;
 
+
 import co.edu.konrad.zoo.entities.ratingEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -95,4 +98,11 @@ public class ratingDTO {
         return rating;
     }
 
+    public static List<ratingDTO> toAnimalList(List<ratingEntity> listaRating){
+        List<ratingDTO> listaAnimalesDTO = new ArrayList<>();
+        for(ratingEntity entity : listaRating){
+            listaAnimalesDTO.add(new ratingDTO(entity));
+        }
+        return listaAnimalesDTO;
+    }
 }

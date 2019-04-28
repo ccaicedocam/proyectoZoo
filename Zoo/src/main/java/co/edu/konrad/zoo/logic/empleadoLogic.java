@@ -5,7 +5,7 @@
  */
 package co.edu.konrad.zoo.logic;
 
-import co.edu.konrad.zoo.entities.empleadoEntity;
+import co.edu.konrad.zoo.entities.listaEmpleados;
 import co.edu.konrad.zoo.persistence.empleadoPersistence;
 import java.util.List;
 import javax.inject.Inject;
@@ -18,8 +18,8 @@ public class empleadoLogic {
      @Inject
     private empleadoPersistence persistence;
     
-    public List<empleadoEntity> obtenerAnimales(){
-        List<empleadoEntity> animales = persistence.encontrarTodo();
+    public List<listaEmpleados> obtenerAnimales(){
+        List<listaEmpleados> animales = persistence.encontrarTodo();
         return animales;
     }
     
@@ -28,8 +28,8 @@ public class empleadoLogic {
      * @param id
      * @return AnimalEntity
      */
-    public empleadoEntity obtenerAnimal(Long id){
-        empleadoEntity animal = persistence.encontrarPorId(id);
+    public listaEmpleados obtenerAnimal(Long id){
+        listaEmpleados animal = persistence.encontrarPorId(id);
         if(animal == null){
             throw new IllegalArgumentException("El animal solicitado NO existe");
         }
@@ -41,7 +41,7 @@ public class empleadoLogic {
      * @param crearEmpleado
      * @return 
      */
-    public empleadoEntity crearAnimal(empleadoEntity crearEmpleado){
+    public listaEmpleados crearAnimal(listaEmpleados crearEmpleado){
         persistence.insertar(crearEmpleado);
         return crearEmpleado;
     }
@@ -52,8 +52,8 @@ public class empleadoLogic {
      * @param actualizarEmpleado
      * @return animal actualizado
      */
-    public empleadoEntity actualizarAnimal (Long id, empleadoEntity actualizarEmpleado){
-        empleadoEntity productoUpdate = persistence.actualizar(actualizarEmpleado);
+    public listaEmpleados actualizarAnimal (Long id, listaEmpleados actualizarEmpleado){
+        listaEmpleados productoUpdate = persistence.actualizar(actualizarEmpleado);
         return productoUpdate;
     }
     

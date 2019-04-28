@@ -21,7 +21,7 @@ public class comidaLogic {
     @Inject
     private comidaPersistence persistence;
     
-    public List<comidaEntity> obtenerProductos(){
+    public List<comidaEntity> obtenerComidas(){
         List<comidaEntity> comida = persistence.encontrarTodo();
         return comida;
     }
@@ -31,10 +31,10 @@ public class comidaLogic {
      * @param id
      * @return comidaEntity
      */
-    public comidaEntity obtenerProducto(Long id){
+    public comidaEntity obtenerComida(Long id){
         comidaEntity comida = persistence.encontrarPorId(id);
         if(comida == null){
-            throw new IllegalArgumentException("El animal solicitado NO existe");
+            throw new IllegalArgumentException("El comida solicitado NO existe");
         }
         return comida;
     }
@@ -44,7 +44,7 @@ public class comidaLogic {
      * @param comidaCrear
      * @return 
      */
-    public comidaEntity crearProducto(comidaEntity comidaCrear){
+    public comidaEntity crearComida(comidaEntity comidaCrear){
         persistence.insertar(comidaCrear);
         return comidaCrear;
     }
@@ -55,7 +55,7 @@ public class comidaLogic {
      * @param comidaActualizar
      * @return comida actualizado
      */
-    public comidaEntity actualizarProducto (Long id, comidaEntity comidaActualizar){
+    public comidaEntity actualizarComida (Long id, comidaEntity comidaActualizar){
         comidaEntity productoUpdate = persistence.actualizar(comidaActualizar);
         return productoUpdate;
     }

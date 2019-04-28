@@ -6,6 +6,8 @@
 package co.edu.konrad.zoo.dto;
 
 import co.edu.konrad.zoo.entities.comidaEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -43,5 +45,17 @@ public class comidaDTO {
         comidaentity.setIdComida(this.idComida);
         comidaentity.setNomComida(this.nomComida);
         return comidaentity;
+    }
+    /**
+     * Conversión masiva de objeto a entidad
+     * @param listaComida
+     * @return 
+     */
+    public static List<comidaDTO> toAnimalList(List<comidaEntity> listaComida){
+        List<comidaDTO> listaComidaDTO = new ArrayList<>();
+        for(comidaEntity entity : listaComida){
+            listaComidaDTO.add(new comidaDTO(entity));
+        }
+        return listaComidaDTO;
     }
 }

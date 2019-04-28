@@ -20,7 +20,7 @@ public class ApplicationConfig extends Application{
     
     @Override
     public Set<Class<?>> getClasses(){
-        Set<Class<?>> resources = new HashSet<Class<?>>();
+        Set<Class<?>> resources = new HashSet<>();
         addRestResourceClasses(resources);
         return resources;      
     }
@@ -29,5 +29,6 @@ public class ApplicationConfig extends Application{
         resources.add(co.edu.konrad.zoo.resources.AnimalResources.class);
         resources.add(co.edu.konrad.zoo.resources.ComidaAnimalResources.class);
         resources.add(co.edu.konrad.zoo.resources.cuidadoAnimalResources.class);
+        resources.add(co.edu.konrad.zoo.resources.comidaResources.class);
     }
 }

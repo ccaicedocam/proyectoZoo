@@ -13,7 +13,7 @@ import javax.inject.Inject;
 
 /**
  *
- * @author cristian_caicedo
+ * @author Jorge
  */
 @Stateless
 public class AnimalLogic {
@@ -27,9 +27,9 @@ public class AnimalLogic {
     }
     
     /**
-     * Obtener producto por su id
+     * Obtener Animal por su id
      * @param id
-     * @return productoEntity
+     * @return AnimalEntity
      */
     public AnimalEntity obtenerProducto(Long id){
         AnimalEntity animal = persistence.encontrarPorId(id);
@@ -40,7 +40,7 @@ public class AnimalLogic {
     }
     
     /**
-     * Metodo que conecta la logica con la transaccion para crear un Producto
+     * Metodo que conecta la logica con la transaccion para crear un Animal
      * @param animalCrear
      * @return 
      */
@@ -50,7 +50,7 @@ public class AnimalLogic {
     }
     
     /**
-     * Metodo que conecta la logica con la transaccion para actualizar un Producto
+     * Metodo que conecta la logica con la transaccion para actualizar un Animal
      * @param id
      * @param animalActualizar
      * @return animal actualizado
@@ -61,7 +61,7 @@ public class AnimalLogic {
     }
     
     /**
-     * Metodo para eliminar un objeto Producto
+     * Metodo para eliminar un objeto animal
      * @param id 
      */
     public void eliminarAnimal(Long id){

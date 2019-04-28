@@ -27,9 +27,9 @@ public class comidaAnimalLogic {
     }
     
     /**
-     * Obtener producto por su id
+     * Obtener comidaAnimal por su id
      * @param id
-     * @return productoEntity
+     * @return comidaAnimalEntity
      */
     public comidaAnimalEntity obtenerProducto(Long id){
         comidaAnimalEntity comidaAnimal = persistence.encontrarPorId(id);
@@ -40,7 +40,7 @@ public class comidaAnimalLogic {
     }
     
     /**
-     * Metodo que conecta la logica con la transaccion para crear un Producto
+     * Metodo que conecta la logica con la transaccion para crear un comida
      * @param comidaAnimalCrear
      * @return 
      */

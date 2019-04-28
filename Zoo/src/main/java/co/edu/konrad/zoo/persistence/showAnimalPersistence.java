@@ -17,7 +17,7 @@ import javax.persistence.Query;
  * @author jorge
  */
 @Stateless
-public class showAnimalPersistene {
+public class showAnimalPersistence {
     
     @PersistenceContext (unitName = "zoopu")
     protected EntityManager sa;

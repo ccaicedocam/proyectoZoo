@@ -33,57 +33,57 @@ public class comidaResources {
     private comidaLogic comidaLogic;
 
     /**
-     * Metodo que obtiene todos los datos de animal
-     * @return Lista animalesDTO
+     * Metodo que obtiene todos los datos de comida
+     * @return Lista comidaCTO
      */
     @GET
-    public List<comidaDTO> getAnimalesList(){
-        List <comidaEntity> animales = comidaLogic.obtenerComidas();
-        return comidaDTO.toAnimalList(animales);
+    public List<comidaDTO> getComidaList(){
+        List <comidaEntity> comida = comidaLogic.obtenerComidas();
+        return comidaDTO.toAnimalList(comida);
     }
     
     /**
-     * Obtener animal por su id
+     * Obtener comida por su id
      * @param id
-     * @return AnimalEntity
+     * @return comidaEntity
      */
     @GET
     @Path("{id: \\d+}")
-    public comidaDTO getAnimal(@PathParam("id") Long id){
-        comidaEntity animal = comidaLogic.obtenerComida(id);
-        if (animal == null){
-            throw new RuntimeException("El animal no existe");
+    public comidaDTO getComida(@PathParam("id") Long id){
+        comidaEntity comida = comidaLogic.obtenerComida(id);
+        if (comida == null){
+            throw new RuntimeException("La comida no existe");
         } 
-        return new comidaDTO(animal);
+        return new comidaDTO(comida);
     }
     
     @POST
-    public comidaDTO createAnimal(comidaDTO animalDto){
-        return new comidaDTO(comidaLogic.crearComida(animalDto.toEntity()));
+    public comidaDTO createComida(comidaDTO comidaDTO){
+        return new comidaDTO(comidaLogic.crearComida(comidaDTO.toEntity()));
     }
     
     /**
      * Actualizar un Animal
      * @param id
-     * @param animalDto
+     * @param comidaDto
      * @return animalDTO actualizado
      */
     @PUT
     @Path("{id: \\d+}")
-    public comidaDTO updateAnimal(@PathParam("id") Long id, comidaDTO animalDto){
-        comidaEntity animalEntity = comidaLogic.obtenerComida(id);
-        if(animalEntity == null){
-            throw new RuntimeException("El animal no existe.");
+    public comidaDTO updateComida(@PathParam("id") Long id, comidaDTO comidaDto){
+        comidaEntity comidaEntity = comidaLogic.obtenerComida(id);
+        if(comidaEntity == null){
+            throw new RuntimeException("La comida no existe.");
         }
-        return new comidaDTO(comidaLogic.actualizarComida(id, animalDto.toEntity()));
+        return new comidaDTO(comidaLogic.actualizarComida(id, comidaDto.toEntity()));
     }
     
     @DELETE
-    @Path("{animalId: \\d+}")
-    public void deleteAnimal(@PathParam("animalId") Long id){
-        comidaEntity animalEntity = comidaLogic.obtenerComida(id);
-        if(animalEntity == null){
-            throw new RuntimeException("El animal no existe.");
+    @Path("{comidaId: \\d+}")
+    public void deleteComida(@PathParam("comidaId") Long id){
+        comidaEntity comidaEntity = comidaLogic.obtenerComida(id);
+        if(comidaEntity == null){
+            throw new RuntimeException("La comida no existe.");
         }
         comidaLogic.eliminarComida(id);
     }

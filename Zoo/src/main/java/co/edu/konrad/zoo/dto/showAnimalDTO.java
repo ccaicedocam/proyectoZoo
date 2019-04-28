@@ -58,12 +58,12 @@ public class showAnimalDTO {
     }
     /**
      * Conversión masiva de objeto a entidad
-     * @param listaAnimales
+     * @param listaShowAnimales
      * @return 
      */
-    public static List<showAnimalDTO> toShowAnimalList(List<ShowAnimalEntity> listaAnimales){
+    public static List<showAnimalDTO> toShowAnimalList(List<ShowAnimalEntity> listaShowAnimales){
         List<showAnimalDTO> listaShowAnimalDTO = new ArrayList<>();
-        for(ShowAnimalEntity entity : listaAnimales){
+        for(ShowAnimalEntity entity : listaShowAnimales){
             listaShowAnimalDTO.add(new showAnimalDTO(entity));
         }
         return listaShowAnimalDTO;

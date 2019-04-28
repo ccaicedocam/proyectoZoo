@@ -6,9 +6,11 @@
 package co.edu.konrad.zoo.dto;
 
 import co.edu.konrad.zoo.entities.AnimalEntity;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
- * @author cristian_caicedo
+ * @author Jorge
  */
 public class AnimalDTO {
     
@@ -90,5 +92,18 @@ public class AnimalDTO {
         animalEntity.setNomCienfitico(this.nomCienfitico);
         animalEntity.setTipoAnimal(this.tipoAnimal);
         return animalEntity;
+    }
+    
+    /**
+     * Conversión masiva de objeto a entidad
+     * @param listaAnimales
+     * @return 
+     */
+    public static List<AnimalDTO> toAnimalList(List<AnimalEntity> listaAnimales){
+        List<AnimalDTO> listaAnimalesDTO = new ArrayList<>();
+        for(AnimalEntity entity : listaAnimales){
+            listaAnimalesDTO.add(new AnimalDTO(entity));
+        }
+        return listaAnimalesDTO;
     }
 }

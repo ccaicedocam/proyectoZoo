@@ -21,7 +21,7 @@ public class AnimalLogic {
     @Inject
     private AnimalPersistence persistence;
     
-    public List<AnimalEntity> obtenerProductos(){
+    public List<AnimalEntity> obtenerAnimales(){
         List<AnimalEntity> animales = persistence.encontrarTodo();
         return animales;
     }
@@ -31,7 +31,7 @@ public class AnimalLogic {
      * @param id
      * @return AnimalEntity
      */
-    public AnimalEntity obtenerProducto(Long id){
+    public AnimalEntity obtenerAnimal(Long id){
         AnimalEntity animal = persistence.encontrarPorId(id);
         if(animal == null){
             throw new IllegalArgumentException("El animal solicitado NO existe");
@@ -44,7 +44,7 @@ public class AnimalLogic {
      * @param animalCrear
      * @return 
      */
-    public AnimalEntity crearProducto(AnimalEntity animalCrear){
+    public AnimalEntity crearAnimal(AnimalEntity animalCrear){
         persistence.insertar(animalCrear);
         return animalCrear;
     }
@@ -55,7 +55,7 @@ public class AnimalLogic {
      * @param animalActualizar
      * @return animal actualizado
      */
-    public AnimalEntity actualizarProducto (Long id, AnimalEntity animalActualizar){
+    public AnimalEntity actualizarAnimal (Long id, AnimalEntity animalActualizar){
         AnimalEntity productoUpdate = persistence.actualizar(animalActualizar);
         return productoUpdate;
     }

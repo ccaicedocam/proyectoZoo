@@ -19,7 +19,7 @@ public class ratingLogic {
     @Inject
     private ratingPersistence persistence;
 
-    public List<ratingEntity> obtenerAnimales() {
+    public List<ratingEntity> obtenerRating() {
         List<ratingEntity> animales = persistence.encontrarTodo();
         return animales;
     }
@@ -30,7 +30,7 @@ public class ratingLogic {
      * @param id
      * @return AnimalEntity
      */
-    public ratingEntity obtenerAnimal(Long id) {
+    public ratingEntity obtenerRating(Long id) {
         ratingEntity animal = persistence.encontrarPorId(id);
         if (animal == null) {
             throw new IllegalArgumentException("El animal solicitado NO existe");
@@ -44,7 +44,7 @@ public class ratingLogic {
      * @param crearRating
      * @return
      */
-    public ratingEntity crearAnimal(ratingEntity crearRating) {
+    public ratingEntity crearRating(ratingEntity crearRating) {
         persistence.insertar(crearRating);
         return crearRating;
     }
@@ -56,7 +56,7 @@ public class ratingLogic {
      * @param actualizarRating
      * @return animal actualizado
      */
-    public ratingEntity actualizarAnimal(Long id, ratingEntity actualizarRating) {
+    public ratingEntity actualizarRating(Long id, ratingEntity actualizarRating) {
         ratingEntity productoUpdate = persistence.actualizar(actualizarRating);
         return productoUpdate;
     }

@@ -57,12 +57,12 @@ public class empleadoDTO {
         return empleadoE;
     }
     
-      public static List<empleadoDTO> toAnimalList(List<listaEmpleados> listaAnimales){
-        List<empleadoDTO> listaAnimalesDTO = new ArrayList<>();
+      public static List<empleadoDTO> toEmpleadoList(List<listaEmpleados> listaAnimales){
+        List<empleadoDTO> listaEmpleadosDTO = new ArrayList<>();
         for(listaEmpleados entity : listaAnimales){
-            listaAnimalesDTO.add(new empleadoDTO(entity));
+            listaEmpleadosDTO.add(new empleadoDTO(entity));
         }
-        return listaAnimalesDTO;
+        return listaEmpleadosDTO;
     }
 
 }

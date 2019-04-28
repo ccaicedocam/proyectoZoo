@@ -21,9 +21,9 @@ public class cuidadoAnimalLogic {
     @Inject
     private cuidadoAnimalPersistence persistence;
 
-    public List<cuidadoAnimalEntity> obtenerAnimales() {
-        List<cuidadoAnimalEntity> animales = persistence.encontrarTodo();
-        return animales;
+    public List<cuidadoAnimalEntity> obtenerCuidador() {
+        List<cuidadoAnimalEntity> cuidador = persistence.encontrarTodo();
+        return cuidador;
     }
 
     /**
@@ -32,10 +32,10 @@ public class cuidadoAnimalLogic {
      * @param id
      * @return AnimalEntity
      */
-    public cuidadoAnimalEntity obtenerAnimal(Long id) {
+    public cuidadoAnimalEntity obtenerCuidador(Long id) {
         cuidadoAnimalEntity animal = persistence.encontrarPorId(id);
         if (animal == null) {
-            throw new IllegalArgumentException("El animal solicitado NO existe");
+            throw new IllegalArgumentException("El cuidador solicitado NO existe");
         }
         return animal;
     }
@@ -46,7 +46,7 @@ public class cuidadoAnimalLogic {
      * @param cuidadorCrear
      * @return
      */
-    public cuidadoAnimalEntity crearAnimal(cuidadoAnimalEntity cuidadorCrear) {
+    public cuidadoAnimalEntity crearCuidador(cuidadoAnimalEntity cuidadorCrear) {
         persistence.insertar(cuidadorCrear);
         return cuidadorCrear;
     }
@@ -58,7 +58,7 @@ public class cuidadoAnimalLogic {
      * @param actualizarCuidador
      * @return animal actualizado
      */
-    public cuidadoAnimalEntity actualizarAnimal(Long id, cuidadoAnimalEntity actualizarCuidador) {
+    public cuidadoAnimalEntity actualizarCuidador(Long id, cuidadoAnimalEntity actualizarCuidador) {
         cuidadoAnimalEntity productoUpdate = persistence.actualizar(actualizarCuidador);
         return productoUpdate;
     }

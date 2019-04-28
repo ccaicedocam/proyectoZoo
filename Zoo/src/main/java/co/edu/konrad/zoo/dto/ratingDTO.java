@@ -98,11 +98,11 @@ public class ratingDTO {
         return rating;
     }
 
-    public static List<ratingDTO> toAnimalList(List<ratingEntity> listaRating){
-        List<ratingDTO> listaAnimalesDTO = new ArrayList<>();
+    public static List<ratingDTO> toRatingList(List<ratingEntity> listaRating){
+        List<ratingDTO> listaRatingDTO = new ArrayList<>();
         for(ratingEntity entity : listaRating){
-            listaAnimalesDTO.add(new ratingDTO(entity));
+            listaRatingDTO.add(new ratingDTO(entity));
         }
-        return listaAnimalesDTO;
+        return listaRatingDTO;
     }
 }

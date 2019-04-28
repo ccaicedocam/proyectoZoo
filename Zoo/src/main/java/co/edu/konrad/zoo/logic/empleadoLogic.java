@@ -5,6 +5,7 @@
  */
 package co.edu.konrad.zoo.logic;
 
+import co.edu.konrad.zoo.entities.empleadoEntity;
 import co.edu.konrad.zoo.entities.listaEmpleados;
 import co.edu.konrad.zoo.persistence.empleadoPersistence;
 import java.util.List;
@@ -18,22 +19,22 @@ public class empleadoLogic {
      @Inject
     private empleadoPersistence persistence;
     
-    public List<listaEmpleados> obtenerAnimales(){
-        List<listaEmpleados> animales = persistence.encontrarTodo();
-        return animales;
+    public List<empleadoEntity> obtenerEmpleado(){
+        List<empleadoEntity> empleados = persistence.encontrarTodo();
+        return empleados;
     }
     
     /**
-     * Obtener Animal por su id
+     * Obtener Empleado por su id
      * @param id
-     * @return AnimalEntity
+     * @return EmpleadoEntity
      */
-    public listaEmpleados obtenerAnimal(Long id){
-        listaEmpleados animal = persistence.encontrarPorId(id);
-        if(animal == null){
-            throw new IllegalArgumentException("El animal solicitado NO existe");
+    public empleadoEntity obtenerEmpleados(Long id){
+        empleadoEntity empleado = persistence.encontrarPorId(id);
+        if(empleado == null){
+            throw new IllegalArgumentException("El empleado solicitado NO existe");
         }
-        return animal;
+        return empleado;
     }
     
     /**
@@ -41,7 +42,7 @@ public class empleadoLogic {
      * @param crearEmpleado
      * @return 
      */
-    public listaEmpleados crearAnimal(listaEmpleados crearEmpleado){
+    public listaEmpleados crearEmpleado(listaEmpleados crearEmpleado){
         persistence.insertar(crearEmpleado);
         return crearEmpleado;
     }
@@ -50,9 +51,9 @@ public class empleadoLogic {
      * Metodo que conecta la logica con la transaccion para actualizar un Animal
      * @param id
      * @param actualizarEmpleado
-     * @return animal actualizado
+     * @return empleado actualizado
      */
-    public listaEmpleados actualizarAnimal (Long id, listaEmpleados actualizarEmpleado){
+    public listaEmpleados actualizarEmpleado (Long id, listaEmpleados actualizarEmpleado){
         listaEmpleados productoUpdate = persistence.actualizar(actualizarEmpleado);
         return productoUpdate;
     }

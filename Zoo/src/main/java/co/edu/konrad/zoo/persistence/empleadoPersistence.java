@@ -5,6 +5,7 @@
  */
 package co.edu.konrad.zoo.persistence;
 
+import co.edu.konrad.zoo.entities.empleadoEntity;
 import co.edu.konrad.zoo.entities.listaEmpleados;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -21,14 +22,14 @@ public class empleadoPersistence {
            @PersistenceContext (unitName = "zoopu")
     protected EntityManager ez;
     
-    public List<listaEmpleados> encontrarTodo(){
+    public List<empleadoEntity> encontrarTodo(){
         Query todos = ez.createQuery("select p from empleadoEntity p");
         return todos.getResultList();
     }
     
     //permite traer en productoEntity el dato de la tabla por medio del id
-    public listaEmpleados encontrarPorId(Long id){
-      return ez.find(listaEmpleados.class, id);
+    public empleadoEntity encontrarPorId(Long id){
+      return ez.find(empleadoEntity.class, id);
     }
     
     //permite insertar datos a la tabla prodcuto retornando el mismo producto

@@ -32,8 +32,8 @@ public class cuidadoAnimalResources {
      */
     @GET
     public List<cuidadoAnimalDTO> getProductoList(){
-        List <cuidadoAnimalEntity> animales = cuidadoLogic.obtenerAnimales();
-        return cuidadoAnimalDTO.toAnimalList(animales);
+        List <cuidadoAnimalEntity> cuidador = cuidadoLogic.obtenerCuidador();
+        return cuidadoAnimalDTO.toAnimalList(cuidador);
     }
     
     /**
@@ -44,7 +44,7 @@ public class cuidadoAnimalResources {
     @GET
     @Path("{id: \\d+}")
     public cuidadoAnimalDTO getAnimal(@PathParam("id") Long id){
-        cuidadoAnimalEntity animal = cuidadoLogic.obtenerAnimal(id);
+        cuidadoAnimalEntity animal = cuidadoLogic.obtenerCuidador(id);
         if (animal == null){
             throw new RuntimeException("El ciudador no existe");
         } 
@@ -53,7 +53,7 @@ public class cuidadoAnimalResources {
     
     @POST
     public cuidadoAnimalDTO createAnimal(cuidadoAnimalDTO cuidadoAnimalDTO){
-        return new cuidadoAnimalDTO(cuidadoLogic.crearAnimal(cuidadoAnimalDTO.toEntity()));
+        return new cuidadoAnimalDTO(cuidadoLogic.crearCuidador(cuidadoAnimalDTO.toEntity()));
     }
     
     
@@ -66,17 +66,17 @@ public class cuidadoAnimalResources {
     @PUT
     @Path("{id: \\d+}")
     public cuidadoAnimalDTO updateAnimal(@PathParam("id") Long id, cuidadoAnimalDTO cuidadorDto){
-        cuidadoAnimalEntity animalEntity = cuidadoLogic.obtenerAnimal(id);
+        cuidadoAnimalEntity animalEntity = cuidadoLogic.obtenerCuidador(id);
         if(animalEntity == null){
             throw new RuntimeException("El ciudador no existe.");
         }
-        return new cuidadoAnimalDTO(cuidadoLogic.actualizarAnimal(id, cuidadorDto.toEntity()));
+        return new cuidadoAnimalDTO(cuidadoLogic.actualizarCuidador(id, cuidadorDto.toEntity()));
     }
     
     @DELETE
     @Path("{cuidadorId: \\d+}")
     public void deleteAnimal(@PathParam("cuidadorId") Long id){
-        cuidadoAnimalEntity animalEntity = cuidadoLogic.obtenerAnimal(id);
+        cuidadoAnimalEntity animalEntity = cuidadoLogic.obtenerCuidador(id);
         if(animalEntity == null){
             throw new RuntimeException("El ciudador no existe.");
         }

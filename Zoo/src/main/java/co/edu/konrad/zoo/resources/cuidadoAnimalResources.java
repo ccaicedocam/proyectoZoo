@@ -28,7 +28,7 @@ public class cuidadoAnimalResources {
 
     /**
      * Metodo que obtiene todos los datos de animal
-     * @return Lista animalesDTO
+     * @return Lista cuidadorDOT
      */
     @GET
     public List<cuidadoAnimalDTO> getProductoList(){
@@ -46,7 +46,7 @@ public class cuidadoAnimalResources {
     public cuidadoAnimalDTO getAnimal(@PathParam("id") Long id){
         cuidadoAnimalEntity animal = cuidadoLogic.obtenerAnimal(id);
         if (animal == null){
-            throw new RuntimeException("El animal no existe");
+            throw new RuntimeException("El ciudador no existe");
         } 
         return new cuidadoAnimalDTO(animal);
     }
@@ -58,28 +58,28 @@ public class cuidadoAnimalResources {
     
     
     /**
-     * Actualizar un Animal
+     * Actualizar un Cuidador
      * @param id
-     * @param animalDto
-     * @return animalDTO actualizado
+     * @param cuidadorDto
+     * @return cuidadorDTO actualizado
      */
     @PUT
     @Path("{id: \\d+}")
-    public cuidadoAnimalDTO updateAnimal(@PathParam("id") Long id, cuidadoAnimalDTO animalDto){
+    public cuidadoAnimalDTO updateAnimal(@PathParam("id") Long id, cuidadoAnimalDTO cuidadorDto){
         cuidadoAnimalEntity animalEntity = cuidadoLogic.obtenerAnimal(id);
         if(animalEntity == null){
-            throw new RuntimeException("El animal no existe.");
+            throw new RuntimeException("El ciudador no existe.");
         }
-        return new cuidadoAnimalDTO(cuidadoLogic.actualizarAnimal(id, animalDto.toEntity()));
+        return new cuidadoAnimalDTO(cuidadoLogic.actualizarAnimal(id, cuidadorDto.toEntity()));
     }
     
     @DELETE
-    @Path("{animalId: \\d+}")
-    public void deleteAnimal(@PathParam("animalId") Long id){
+    @Path("{cuidadorId: \\d+}")
+    public void deleteAnimal(@PathParam("cuidadorId") Long id){
         cuidadoAnimalEntity animalEntity = cuidadoLogic.obtenerAnimal(id);
         if(animalEntity == null){
-            throw new RuntimeException("El animal no existe.");
+            throw new RuntimeException("El ciudador no existe.");
         }
-        cuidadoLogic.eliminarAnimal(id);
+        cuidadoLogic.eliminarCuidador(id);
     }
 }

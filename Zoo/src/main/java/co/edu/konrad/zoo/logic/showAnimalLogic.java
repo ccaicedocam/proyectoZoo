@@ -21,7 +21,7 @@ public class showAnimalLogic {
     @Inject
     private showAnimalPersistence persistence;
     
-    public List<ShowAnimalEntity> obtenerProductos(){
+    public List<ShowAnimalEntity> obtenerShowsAnimal(){
         List<ShowAnimalEntity> showAnimal = persistence.encontrarTodo();
         return showAnimal;
     }
@@ -31,7 +31,7 @@ public class showAnimalLogic {
      * @param id
      * @return showAnimalEntity
      */
-    public ShowAnimalEntity obtenerProducto(Long id){
+    public ShowAnimalEntity obtenerShowAnimal(Long id){
         ShowAnimalEntity showAnimal = persistence.encontrarPorId(id);
         if(showAnimal == null){
             throw new IllegalArgumentException("El showAnimal solicitado NO existe");
@@ -44,7 +44,7 @@ public class showAnimalLogic {
      * @param showAnimalCrear
      * @return 
      */
-    public ShowAnimalEntity crearProducto(ShowAnimalEntity showAnimalCrear){
+    public ShowAnimalEntity crearShowAnimal(ShowAnimalEntity showAnimalCrear){
         persistence.insertar(showAnimalCrear);
         return showAnimalCrear;
     }
@@ -55,9 +55,9 @@ public class showAnimalLogic {
      * @param showAnimalActualizar
      * @return animal actualizado
      */
-    public ShowAnimalEntity actualizarProducto (Long id, ShowAnimalEntity showAnimalActualizar){
-        ShowAnimalEntity productoUpdate = persistence.actualizar(showAnimalActualizar);
-        return productoUpdate;
+    public ShowAnimalEntity actualizarShowAnimal (Long id, ShowAnimalEntity showAnimalActualizar){
+        ShowAnimalEntity showAnimalUpdate = persistence.actualizar(showAnimalActualizar);
+        return showAnimalUpdate;
     }
     
     /**

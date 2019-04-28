@@ -21,7 +21,7 @@ public class comidaAnimalLogic {
     @Inject
     private comidaAnimalPersistence persistence;
     
-    public List<comidaAnimalEntity> obtenerProductos(){
+    public List<comidaAnimalEntity> obtenerComidaAnimales(){
         List<comidaAnimalEntity> comidaAnimal = persistence.encontrarTodo();
         return comidaAnimal;
     }
@@ -31,7 +31,7 @@ public class comidaAnimalLogic {
      * @param id
      * @return comidaAnimalEntity
      */
-    public comidaAnimalEntity obtenerProducto(Long id){
+    public comidaAnimalEntity obtenerComidaAnimal(Long id){
         comidaAnimalEntity comidaAnimal = persistence.encontrarPorId(id);
         if(comidaAnimal == null){
             throw new IllegalArgumentException("la comida solicitado NO existe");
@@ -44,7 +44,7 @@ public class comidaAnimalLogic {
      * @param comidaAnimalCrear
      * @return 
      */
-    public comidaAnimalEntity crearProducto(comidaAnimalEntity comidaAnimalCrear){
+    public comidaAnimalEntity crearComidaAnimal(comidaAnimalEntity comidaAnimalCrear){
         persistence.insertar(comidaAnimalCrear);
         return comidaAnimalCrear;
     }
@@ -55,7 +55,7 @@ public class comidaAnimalLogic {
      * @param comidaAnimalActualizar
      * @return animal actualizado
      */
-    public comidaAnimalEntity actualizarProducto (Long id, comidaAnimalEntity comidaAnimalActualizar){
+    public comidaAnimalEntity actualizarComidaAnimal (Long id, comidaAnimalEntity comidaAnimalActualizar){
         comidaAnimalEntity productoUpdate = persistence.actualizar(comidaAnimalActualizar);
         return productoUpdate;
     }
@@ -64,7 +64,7 @@ public class comidaAnimalLogic {
      * Metodo para eliminar un objeto Animal
      * @param id 
      */
-    public void elimiinarComida(Long id){
+    public void eliminarComida(Long id){
         persistence.eliminar(id);
     }
     

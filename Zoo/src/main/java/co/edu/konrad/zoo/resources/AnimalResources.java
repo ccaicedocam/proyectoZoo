@@ -37,7 +37,7 @@ public class AnimalResources {
      * @return Lista animalesDTO
      */
     @GET
-    public List<AnimalDTO> getProductoList(){
+    public List<AnimalDTO> getAnimalesList(){
         List <AnimalEntity> animales = animalLogic.obtenerAnimales();
         return AnimalDTO.toAnimalList(animales);
     }
@@ -61,7 +61,6 @@ public class AnimalResources {
     public AnimalDTO createAnimal(AnimalDTO animalDto){
         return new AnimalDTO(animalLogic.crearAnimal(animalDto.toEntity()));
     }
-    
     
     /**
      * Actualizar un Animal

@@ -5,9 +5,9 @@
  */
 package co.edu.konrad.zoo.dto;
 
-import javax.persistence.Column;
 import co.edu.konrad.zoo.entities.ShowEntity;
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author cristian_caicedo
@@ -65,4 +65,17 @@ public class showDTO {
         showentity.setIdEmpleado(IdEmpleado);
         return showentity;
     }   
+        
+    	    /**
+     * Conversión masiva de objeto a entidad
+     * @param listaShow
+     * @return 
+     */
+    public static List<showDTO> toShowList(List<ShowEntity> listaShow){
+        List<showDTO> listaShowDTO = new ArrayList<>();
+        for(ShowEntity entity : listaShow){
+            listaShowDTO.add(new showDTO(entity));
+        }
+        return listaShowDTO;
+    }  
 }

@@ -6,6 +6,8 @@
 package co.edu.konrad.zoo.dto;
 
 import co.edu.konrad.zoo.entities.ShowAnimalEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -53,5 +55,17 @@ public class showAnimalDTO {
         showAnimalEntity.setIdShow(this.idShow);
         showAnimalEntity.setShowAnimal(this.showAnimal);
         return showAnimalEntity;
+    }
+    /**
+     * Conversión masiva de objeto a entidad
+     * @param listaShowAnimales
+     * @return 
+     */
+    public static List<showAnimalDTO> toShowAnimalList(List<ShowAnimalEntity> listaShowAnimales){
+        List<showAnimalDTO> listaShowAnimalDTO = new ArrayList<>();
+        for(ShowAnimalEntity entity : listaShowAnimales){
+            listaShowAnimalDTO.add(new showAnimalDTO(entity));
+        }
+        return listaShowAnimalDTO;
     }
 }    

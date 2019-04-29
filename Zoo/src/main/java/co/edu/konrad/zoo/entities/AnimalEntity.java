@@ -14,7 +14,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author cristian_caicedo
+ * @author Jorge
  */
 @Entity (name = "Animal")
 public class AnimalEntity implements Serializable {

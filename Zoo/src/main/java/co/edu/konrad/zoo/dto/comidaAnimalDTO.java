@@ -79,10 +79,10 @@ public class comidaAnimalDTO {
      * @return 
      */
     public static List<comidaAnimalDTO> toComidaAnimalList(List<comidaAnimalEntity> listaComidaAnimales){
-        List<comidaAnimalDTO> listaAnimalesDTO = new ArrayList<>();
+        List<comidaAnimalDTO> listacomidaAnimalesDTO = new ArrayList<>();
         for(comidaAnimalEntity entity : listaComidaAnimales){
-            listaAnimalesDTO.add(new comidaAnimalDTO(entity));
+            listacomidaAnimalesDTO.add(new comidaAnimalDTO(entity));
         }
-        return listaAnimalesDTO;
+        return listacomidaAnimalesDTO;
     }
 }

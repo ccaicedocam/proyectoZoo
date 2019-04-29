@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package co.edu.konrad.zoo.dto;
+import co.edu.konrad.zoo.entities.empleadoEntity;
 import co.edu.konrad.zoo.entities.listaEmpleados;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +44,7 @@ public class empleadoDTO {
         this.cargoEmpleado = cargoEmpleado;
     }
     
-     public empleadoDTO(listaEmpleados anim) {
+     public empleadoDTO(empleadoEntity anim) {
         this.cargoEmpleado = anim.getCargoEmpleado();
         this.idCodEmpleado = anim.getIdCodEmpleado();
         this.nomEmpleado = anim.getNomEmpleado();
@@ -57,9 +58,9 @@ public class empleadoDTO {
         return empleadoE;
     }
     
-      public static List<empleadoDTO> toEmpleadoList(List<listaEmpleados> listaAnimales){
+      public static List<empleadoDTO> toEmpleadoList(List<empleadoEntity> listaAnimales){
         List<empleadoDTO> listaEmpleadosDTO = new ArrayList<>();
-        for(listaEmpleados entity : listaAnimales){
+        for(empleadoEntity entity : listaAnimales){
             listaEmpleadosDTO.add(new empleadoDTO(entity));
         }
         return listaEmpleadosDTO;

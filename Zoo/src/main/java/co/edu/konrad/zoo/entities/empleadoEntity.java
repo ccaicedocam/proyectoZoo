@@ -54,6 +54,4 @@ public class empleadoEntity implements Serializable{
     public void setCargoEmpleado(String cargoEmpleado) {
         this.cargoEmpleado = cargoEmpleado;
     }
-    
-    
 }

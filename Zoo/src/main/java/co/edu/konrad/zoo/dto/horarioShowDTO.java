@@ -70,7 +70,7 @@ public class horarioShowDTO {
      * @param listahorarioShows
      * @return 
      */
-    public static List<horarioShowDTO> toShowAnimalList(List<horarioShowsEntity> listahorarioShows){
+    public static List<horarioShowDTO> toHoraroiShowList(List<horarioShowsEntity> listahorarioShows){
         List<horarioShowDTO> listahorarioShowDTO = new ArrayList<>();
         for(horarioShowsEntity entity : listahorarioShows){
             listahorarioShowDTO.add(new horarioShowDTO(entity));

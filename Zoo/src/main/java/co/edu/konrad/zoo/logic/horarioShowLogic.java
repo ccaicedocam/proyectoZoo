@@ -64,7 +64,7 @@ public class horarioShowLogic {
      * Metodo para eliminar un objeto horario Shows
      * @param id 
      */
-    public void eliminarComida(Long id){
+    public void eliminarHorarioShow(Long id){
         persistence.eliminar(id);
     }
     

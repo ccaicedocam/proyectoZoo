@@ -48,7 +48,7 @@ public class lugarDTO {
      * @param listaLugar
      * @return 
      */
-    public static List<lugarDTO> toShowAnimalList(List<lugarEntity> listaLugar){
+    public static List<lugarDTO> toLugarList(List<lugarEntity> listaLugar){
         List<lugarDTO> listaLugarShowDTO = new ArrayList<>();
         for(lugarEntity entity : listaLugar){
             listaLugarShowDTO.add(new lugarDTO(entity));

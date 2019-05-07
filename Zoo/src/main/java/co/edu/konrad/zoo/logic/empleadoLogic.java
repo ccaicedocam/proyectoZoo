@@ -6,7 +6,6 @@
 package co.edu.konrad.zoo.logic;
 
 import co.edu.konrad.zoo.entities.empleadoEntity;
-import co.edu.konrad.zoo.entities.listaEmpleados;
 import co.edu.konrad.zoo.persistence.empleadoPersistence;
 import java.util.List;
 import javax.inject.Inject;
@@ -42,7 +41,7 @@ public class empleadoLogic {
      * @param crearEmpleado
      * @return 
      */
-    public listaEmpleados crearEmpleado(listaEmpleados crearEmpleado){
+    public empleadoEntity crearEmpleado(empleadoEntity crearEmpleado){
         persistence.insertar(crearEmpleado);
         return crearEmpleado;
     }
@@ -53,8 +52,8 @@ public class empleadoLogic {
      * @param actualizarEmpleado
      * @return empleado actualizado
      */
-    public listaEmpleados actualizarEmpleado (Long id, listaEmpleados actualizarEmpleado){
-        listaEmpleados productoUpdate = persistence.actualizar(actualizarEmpleado);
+    public empleadoEntity actualizarEmpleado (Long id, empleadoEntity actualizarEmpleado){
+        empleadoEntity productoUpdate = persistence.actualizar(actualizarEmpleado);
         return productoUpdate;
     }
     

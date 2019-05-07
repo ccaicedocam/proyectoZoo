@@ -5,7 +5,6 @@
  */
 package co.edu.konrad.zoo.dto;
 import co.edu.konrad.zoo.entities.empleadoEntity;
-import co.edu.konrad.zoo.entities.listaEmpleados;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -50,8 +49,8 @@ public class empleadoDTO {
         this.nomEmpleado = anim.getNomEmpleado();
     }
 
-    public listaEmpleados toEntity() {
-        listaEmpleados empleadoE = new listaEmpleados();
+    public empleadoEntity toEntity() {
+        empleadoEntity empleadoE = new empleadoEntity();
         empleadoE.setCargoEmpleado(this.cargoEmpleado);
         empleadoE.setIdCodEmpleado(this.idCodEmpleado);
         empleadoE.setNomEmpleado(this.nomEmpleado);

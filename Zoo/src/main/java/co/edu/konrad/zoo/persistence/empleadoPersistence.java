@@ -6,7 +6,6 @@
 package co.edu.konrad.zoo.persistence;
 
 import co.edu.konrad.zoo.entities.empleadoEntity;
-import co.edu.konrad.zoo.entities.listaEmpleados;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -33,18 +32,18 @@ public class empleadoPersistence {
     }
     
     //permite insertar datos a la tabla prodcuto retornando el mismo producto
-    public listaEmpleados insertar(listaEmpleados entity){
+    public empleadoEntity insertar(empleadoEntity entity){
      ez.persist(entity);
      return entity;
     }
     
     //permite acutalizar el dato en la tabla
-    public listaEmpleados actualizar(listaEmpleados entity){
+    public empleadoEntity actualizar(empleadoEntity entity){
      return ez.merge(entity);
     }
     
     public void eliminar(Long id){
-      listaEmpleados empleadoEliminar = ez.find(listaEmpleados.class, id);
+      empleadoEntity empleadoEliminar = ez.find(empleadoEntity.class, id);
       ez.remove(empleadoEliminar);   
     } 
     

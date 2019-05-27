@@ -18,6 +18,7 @@ import javax.persistence.ManyToOne;
  *
  * @author ASUS-PC
  */
+
 @Entity
 public class cuidadoAnimalEntity implements Serializable{
     
@@ -43,32 +44,6 @@ public class cuidadoAnimalEntity implements Serializable{
         this.idEmpleado = idEmpleado;
     }
 
-
-    
-//    public long getIdCuidador() {
-//        return idCuidador;
-//    }
-//
-//    public void setIdCuidador(long idCuidador) {
-//        this.idCuidador = idCuidador;
-//    }
-//
-//    public long getIdAnimal() {
-//        return idAnimal;
-//    }
-//
-//    public void setIdAnimal(long idAnimal) {
-//        this.idAnimal = idAnimal;
-//    }
-//
-//    public String getIdEmpleado() {
-//        return idEmpleado;
-//    }
-//
-//    public void setIdEmpleado(String idEmpleado) {
-//        this.idEmpleado = idEmpleado;
-//    }
-
     public Long getIdCuidador() {
         return idCuidador;
     }
@@ -91,9 +66,6 @@ public class cuidadoAnimalEntity implements Serializable{
 
     public void setIdEmpleado(String idEmpleado) {
         this.idEmpleado = idEmpleado;
-    }
-    
-    
-    
+    }  
     
 }

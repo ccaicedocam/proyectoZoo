@@ -20,6 +20,9 @@ public class showDTO {
     private Date Idhora;
     private empleadoEntity IdEmpleado;
 
+    public showDTO() {
+    }
+    
     public Long getIdShow() {
         return idShow;
     }

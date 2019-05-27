@@ -15,17 +15,15 @@ import java.util.List;
 public class AnimalDTO {
     
     private Long idAnimal;
-    
     private String nomAnimal;
-    
     private String nomCienfitico;
-    
     private String especia;
-    
     private String tipoAnimal;
-    
     private String descripcion;
 
+    public AnimalDTO() {
+    }
+    
     public Long getIdAnimal() {
         return idAnimal;
     }
@@ -105,7 +103,5 @@ public class AnimalDTO {
             listaAnimalesDTO.add(new AnimalDTO(entity));
         }
         return listaAnimalesDTO;
-    }
-    
-    
+    }    
 }

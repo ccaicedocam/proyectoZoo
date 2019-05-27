@@ -56,8 +56,8 @@ public class AnimalLogic {
      * @return animal actualizado
      */
     public AnimalEntity actualizarAnimal (Long id, AnimalEntity animalActualizar){
-        AnimalEntity productoUpdate = persistence.actualizar(animalActualizar);
-        return productoUpdate;
+        AnimalEntity entity = persistence.actualizar(animalActualizar);
+        return entity;
     }
     
     /**

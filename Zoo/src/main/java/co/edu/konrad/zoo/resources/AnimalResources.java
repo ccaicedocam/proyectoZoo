@@ -24,9 +24,10 @@ import javax.ws.rs.core.MediaType;
  *
  * @author jorge
  */
+@Path("animales")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("/animales")
+
 public class AnimalResources {
     
     @EJB

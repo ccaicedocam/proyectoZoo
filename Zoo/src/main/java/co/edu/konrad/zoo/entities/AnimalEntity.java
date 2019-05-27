@@ -16,7 +16,8 @@ import javax.persistence.Id;
  *
  * @author Jorge
  */
-@Entity (name = "Animal")
+//@Entity (name = "Animal")
+@Entity 
 public class AnimalEntity implements Serializable {
 
     @Id

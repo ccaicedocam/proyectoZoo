@@ -28,7 +28,7 @@ public class ratingEntity implements Serializable{
     
     @ManyToOne
     @JoinColumn (name = "id_animal")
-    private Long idAnimal;
+    private AnimalEntity idAnimal;
     
     @Column (name = "id_show")
     private Long idShow;
@@ -54,13 +54,15 @@ public class ratingEntity implements Serializable{
         this.idRaring = idRaring;
     }
 
-    public Long getIdAnimal() {
+    public AnimalEntity getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(Long idAnimal) {
+    public void setIdAnimal(AnimalEntity idAnimal) {
         this.idAnimal = idAnimal;
     }
+
+
 
     public Long getIdShow() {
         return idShow;

@@ -6,6 +6,7 @@
 package co.edu.konrad.zoo.dto;
 
 
+import co.edu.konrad.zoo.entities.AnimalEntity;
 import co.edu.konrad.zoo.entities.ratingEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class ratingDTO {
 
     private Long idRaring;
 
-    private Long idAnimal;
+    private AnimalEntity idAnimal;
 
     private Long idShow;
 
@@ -36,13 +37,15 @@ public class ratingDTO {
         this.idRaring = idRaring;
     }
 
-    public Long getIdAnimal() {
+    public AnimalEntity getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(Long idAnimal) {
+    public void setIdAnimal(AnimalEntity idAnimal) {
         this.idAnimal = idAnimal;
     }
+
+
 
     public Long getIdShow() {
         return idShow;

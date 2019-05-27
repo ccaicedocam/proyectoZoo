@@ -5,7 +5,9 @@
  */
 package co.edu.konrad.zoo.dto;
 
+import co.edu.konrad.zoo.entities.AnimalEntity;
 import co.edu.konrad.zoo.entities.cuidadoAnimalEntity;
+import co.edu.konrad.zoo.entities.empleadoEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,9 +19,9 @@ public class cuidadoAnimalDTO {
 
     private Long idCuidador;
 
-    private Long idAnimal;
+    private AnimalEntity idAnimal;
 
-    private Long idEmpleado;
+    private empleadoEntity idEmpleado;
 
     public Long getIdcuidadoAnimal() {
         return idCuidador;
@@ -29,22 +31,31 @@ public class cuidadoAnimalDTO {
         this.idCuidador = idcuidadoAnimal;
     }
 
-    public Long getIdAnimal() {
+    public Long getIdCuidador() {
+        return idCuidador;
+    }
+
+    public void setIdCuidador(Long idCuidador) {
+        this.idCuidador = idCuidador;
+    }
+
+    public AnimalEntity getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(Long idAnimal) {
+    public void setIdAnimal(AnimalEntity idAnimal) {
         this.idAnimal = idAnimal;
     }
 
-    public Long getIdEmpleado() {
+    public empleadoEntity getIdEmpleado() {
         return idEmpleado;
     }
 
-    public void setIdEmpleado(Long idEmpleado) {
+    public void setIdEmpleado(empleadoEntity idEmpleado) {
         this.idEmpleado = idEmpleado;
-    }    
+    }
 
+  
     public cuidadoAnimalDTO(cuidadoAnimalEntity anim) {
         this.idCuidador = anim.getIdCuidador();
         this.idAnimal = anim.getIdAnimal();

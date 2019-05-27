@@ -34,7 +34,7 @@ public class comidaLogic {
     public comidaEntity obtenerComida(Long id){
         comidaEntity comida = persistence.encontrarPorId(id);
         if(comida == null){
-            throw new IllegalArgumentException("La comida solicitado NO existe");
+            throw new IllegalArgumentException("El comida solicitado NO existe");
         }
         return comida;
     }
@@ -56,8 +56,8 @@ public class comidaLogic {
      * @return comida actualizado
      */
     public comidaEntity actualizarComida (Long id, comidaEntity comidaActualizar){
-        comidaEntity entity = persistence.actualizar(comidaActualizar);
-        return entity;
+        comidaEntity productoUpdate = persistence.actualizar(comidaActualizar);
+        return productoUpdate;
     }
     
     /**

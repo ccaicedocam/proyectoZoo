@@ -18,33 +18,34 @@ import javax.persistence.Query;
  */
 @Stateless
 public class empleadoPersistence {
-           @PersistenceContext (unitName = "zoopu")
+
+    @PersistenceContext(unitName = "zoopu")
     protected EntityManager ez;
-    
-    public List<empleadoEntity> encontrarTodo(){
+
+    public List<empleadoEntity> encontrarTodo() {
         Query todos = ez.createQuery("select p from empleadoEntity p");
         return todos.getResultList();
     }
-    
+
     //permite traer en productoEntity el dato de la tabla por medio del id
-    public empleadoEntity encontrarPorId(Long id){
-      return ez.find(empleadoEntity.class, id);
+    public empleadoEntity encontrarPorId(Long id) {
+        return ez.find(empleadoEntity.class, id);
     }
-    
+
     //permite insertar datos a la tabla prodcuto retornando el mismo producto
-    public empleadoEntity insertar(empleadoEntity entity){
-     ez.persist(entity);
-     return entity;
+    public empleadoEntity insertar(empleadoEntity entity) {
+        ez.persist(entity);
+        return entity;
     }
-    
+
     //permite acutalizar el dato en la tabla
-    public empleadoEntity actualizar(empleadoEntity entity){
-     return ez.merge(entity);
+    public empleadoEntity actualizar(empleadoEntity entity) {
+        return ez.merge(entity);
     }
-    
-    public void eliminar(Long id){
-      empleadoEntity empleadoEliminar = ez.find(empleadoEntity.class, id);
-      ez.remove(empleadoEliminar);   
-    } 
-    
+
+    public void eliminar(Long id) {
+        empleadoEntity empleadoEliminar = ez.find(empleadoEntity.class, id);
+        ez.remove(empleadoEliminar);
+    }
+
 }

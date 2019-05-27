@@ -14,6 +14,10 @@ import java.util.List;
 public class lugarDTO {
     private Long idLugar;
     private String nombre;
+    
+    public lugarDTO(){
+        
+    }
 
     public Long getIdLugar() {
         return idLugar;

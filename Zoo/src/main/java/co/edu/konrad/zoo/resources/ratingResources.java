@@ -24,65 +24,68 @@ import javax.ws.rs.core.MediaType;
  *
  * @author ASUS-PC
  */
+@Path("rating")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("/rating")
 public class ratingResources {
-        @EJB
+
+    @EJB
     private ratingLogic ratingLogic;
 
     /**
      * Metodo que obtiene todos los datos de la comida del animal
+     *
      * @return Lista animalesDTO
      */
     @GET
-    public List<ratingDTO> getAnimalesList(){
-        List <ratingEntity> rating = ratingLogic.obtenerRating();
+    public List<ratingDTO> getAnimalesList() {
+        List<ratingEntity> rating = ratingLogic.obtenerRating();
         return ratingDTO.toRatingList(rating);
     }
-    
+
     /**
      * Obtener Rating por su id
+     *
      * @param id
      * @return RatingEntity
      */
     @GET
     @Path("{id: \\d+}")
-    public ratingDTO getComidaAnimal(@PathParam("id") Long id){
+    public ratingDTO getComidaAnimal(@PathParam("id") Long id) {
         ratingEntity rating = ratingLogic.obtenerRating(id);
-        if (rating == null){
+        if (rating == null) {
             throw new RuntimeException("La calificacion no existe");
-        } 
+        }
         return new ratingDTO(rating);
     }
-    
+
     @POST
-    public ratingDTO createRating(ratingDTO ratingDTO){
+    public ratingDTO createRating(ratingDTO ratingDTO) {
         return new ratingDTO(ratingLogic.crearRating(ratingDTO.toEntity()));
     }
-    
-    
+
     /**
      * Actualizar un Rating
+     *
      * @param id
      * @param ratingDTO
      * @return ratingDTO actualizado
      */
     @PUT
     @Path("{id: \\d+}")
-    public ratingDTO updateAnimal(@PathParam("id") Long id, ratingDTO ratingDTO){
+    public ratingDTO updateAnimal(@PathParam("id") Long id, ratingDTO ratingDTO) {
         ratingEntity ratingEntity = ratingLogic.obtenerRating(id);
-        if(ratingEntity == null){
+        if (ratingEntity == null) {
             throw new RuntimeException("La calificacion no existe.");
         }
         return new ratingDTO(ratingLogic.actualizarRating(id, ratingDTO.toEntity()));
     }
-    
+
     @DELETE
     @Path("{ratingId: \\d+}")
-    public void deleteAnimal(@PathParam("ratingId") Long id){
+    public void deleteAnimal(@PathParam("ratingId") Long id) {
         ratingEntity animalEntity = ratingLogic.obtenerRating(id);
-        if(animalEntity == null){
+        if (animalEntity == null) {
             throw new RuntimeException("La calificacion no existe.");
         }
         ratingLogic.eliminarRating(id);

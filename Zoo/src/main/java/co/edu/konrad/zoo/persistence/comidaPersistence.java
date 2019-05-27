@@ -18,8 +18,7 @@ import javax.persistence.Query;
  */
 @Stateless
 public class comidaPersistence {
- 
-    @PersistenceContext (unitName = "zoopu")
+ @PersistenceContext (unitName = "zoopu")
     protected EntityManager ez;
     
     public List<comidaEntity> encontrarTodo(){

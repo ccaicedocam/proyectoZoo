@@ -24,9 +24,9 @@ import javax.ws.rs.core.MediaType;
  *
  * @author ASUS-PC
  */
+@Path("empleados")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("/empleados")
 public class empleadoResources {
     
    @EJB
@@ -74,7 +74,7 @@ public class empleadoResources {
     public empleadoDTO updateAnimal(@PathParam("id") Long id, empleadoDTO empleadoDto){
         empleadoEntity empleadoEntity = empleadosLogic.obtenerEmpleados(id);
         if(empleadoEntity == null){
-            throw new RuntimeException("El animal no existe.");
+            throw new RuntimeException("El empleado no existe.");
         }
         return new empleadoDTO(empleadosLogic.actualizarEmpleado(id, empleadoDto.toEntity()));
     }

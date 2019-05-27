@@ -8,12 +8,14 @@ package co.edu.konrad.zoo.logic;
 import co.edu.konrad.zoo.entities.ratingEntity;
 import co.edu.konrad.zoo.persistence.ratingPersistence;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author ASUS-PC
  */
+@Stateless
 public class ratingLogic {
 
     @Inject
@@ -31,11 +33,11 @@ public class ratingLogic {
      * @return AnimalEntity
      */
     public ratingEntity obtenerRating(Long id) {
-        ratingEntity animal = persistence.encontrarPorId(id);
-        if (animal == null) {
+        ratingEntity rating = persistence.encontrarPorId(id);
+        if (rating == null) {
             throw new IllegalArgumentException("El animal solicitado NO existe");
         }
-        return animal;
+        return rating;
     }
 
     /**

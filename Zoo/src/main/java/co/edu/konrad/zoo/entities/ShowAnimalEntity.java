@@ -35,9 +35,6 @@ public class ShowAnimalEntity implements Serializable{
     @JoinColumn (name = "id_animal")
     private AnimalEntity idAnimal;
 
-    public ShowAnimalEntity() {
-    }
-    
     public Long getShowAnimal() {
         return idShowAnimal;
     }

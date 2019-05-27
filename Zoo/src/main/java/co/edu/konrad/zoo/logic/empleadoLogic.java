@@ -8,61 +8,68 @@ package co.edu.konrad.zoo.logic;
 import co.edu.konrad.zoo.entities.empleadoEntity;
 import co.edu.konrad.zoo.persistence.empleadoPersistence;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author ASUS-PC
  */
+@Stateless
 public class empleadoLogic {
-     @Inject
+
+    @Inject
     private empleadoPersistence persistence;
-    
-    public List<empleadoEntity> obtenerEmpleado(){
+
+    public List<empleadoEntity> obtenerEmpleado() {
         List<empleadoEntity> empleados = persistence.encontrarTodo();
         return empleados;
     }
-    
+
     /**
      * Obtener Empleado por su id
+     *
      * @param id
      * @return EmpleadoEntity
      */
-    public empleadoEntity obtenerEmpleados(Long id){
+    public empleadoEntity obtenerEmpleados(Long id) {
         empleadoEntity empleado = persistence.encontrarPorId(id);
-        if(empleado == null){
+        if (empleado == null) {
             throw new IllegalArgumentException("El empleado solicitado NO existe");
         }
         return empleado;
     }
-    
+
     /**
      * Metodo que conecta la logica con la transaccion para crear un Animal
+     *
      * @param crearEmpleado
-     * @return 
+     * @return
      */
-    public empleadoEntity crearEmpleado(empleadoEntity crearEmpleado){
+    public empleadoEntity crearEmpleado(empleadoEntity crearEmpleado) {
         persistence.insertar(crearEmpleado);
         return crearEmpleado;
     }
-    
+
     /**
      * Metodo que conecta la logica con la transaccion para actualizar un Animal
+     *
      * @param id
      * @param actualizarEmpleado
      * @return empleado actualizado
      */
-    public empleadoEntity actualizarEmpleado (Long id, empleadoEntity actualizarEmpleado){
+    public empleadoEntity actualizarEmpleado(Long id, empleadoEntity actualizarEmpleado) {
         empleadoEntity productoUpdate = persistence.actualizar(actualizarEmpleado);
         return productoUpdate;
     }
-    
+
     /**
      * Metodo para eliminar un objeto animal
-     * @param id 
+     *
+     * @param id
      */
-    public void eliminarEmpleado(Long id){
+    public void eliminarEmpleado(Long id) {
         persistence.eliminar(id);
     }
-     
+
 }

@@ -19,9 +19,6 @@ public class comidaDTO {
     
     private String nomComida;
 
-    public comidaDTO() {
-    }
-    
     public Long getIdComida() {
         return idComida;
     }
@@ -54,7 +51,7 @@ public class comidaDTO {
      * @param listaComida
      * @return 
      */
-    public static List<comidaDTO> toComidaList(List<comidaEntity> listaComida){
+    public static List<comidaDTO> toAnimalList(List<comidaEntity> listaComida){
         List<comidaDTO> listaComidaDTO = new ArrayList<>();
         for(comidaEntity entity : listaComida){
             listaComidaDTO.add(new comidaDTO(entity));

@@ -19,6 +19,11 @@ public class horarioShowDTO {
     private lugarEntity idLugar;
     private ShowEntity idShow; 
 
+    
+    public horarioShowDTO(){
+        
+    }
+    
     public Long getIdHoraShows() {
         return idHoraShows;
     }

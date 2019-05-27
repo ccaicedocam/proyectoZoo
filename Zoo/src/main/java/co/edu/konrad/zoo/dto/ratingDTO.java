@@ -18,17 +18,16 @@ import java.util.List;
 public class ratingDTO {
 
     private Long idRaring;
-
     private AnimalEntity idAnimal;
-
     private Long idShow;
-
     private String tipo;
-
     private int calificacion;
-
     private String comentario;
 
+    public ratingDTO(){
+        
+    }
+    
     public Long getIdRaring() {
         return idRaring;
     }
@@ -79,58 +78,8 @@ public class ratingDTO {
         this.comentario = comentario;
     }
     
-    
-
-//    public long getIdRaring() {
-//        return idRaring;
-//    }
-//
-//    public void setIdRaring(long idRaring) {
-//        this.idRaring = idRaring;
-//    }
-//
-//    public int getIdAnimal() {
-//        return idAnimal;
-//    }
-//
-//    public void setIdAnimal(int idAnimal) {
-//        this.idAnimal = idAnimal;
-//    }
-//
-//    public long getIdShow() {
-//        return idShow;
-//    }
-//
-//    public void setIdShow(long idShow) {
-//        this.idShow = idShow;
-//    }
-//
-//    public String getTipo() {
-//        return tipo;
-//    }
-//
-//    public void setTipo(String tipo) {
-//        this.tipo = tipo;
-//    }
-//
-//    public int getCalificacion() {
-//        return calificacion;
-//    }
-//
-//    public void setCalificacion(int calificacion) {
-//        this.calificacion = calificacion;
-//    }
-//
-//    public String getComentario() {
-//        return comentario;
-//    }
-//
-//    public void setComentario(String comentario) {
-//        this.comentario = comentario;
-//    }
 
     public ratingDTO(ratingEntity anim) {
-
         this.idRaring = anim.getIdRaring();
         this.calificacion = anim.getCalificacion();
         this.comentario = anim.getComentario();

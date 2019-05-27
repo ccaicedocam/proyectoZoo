@@ -22,6 +22,10 @@ public class empleadoDTO {
     public Long getIdCodEmpleado() {
         return idCodEmpleado;
     }
+    
+    public empleadoDTO(){
+        
+    }
 
     public void setIdCodEmpleado(Long idCodEmpleado) {
         this.idCodEmpleado = idCodEmpleado;

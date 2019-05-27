@@ -28,9 +28,6 @@ public class comidaEntity implements Serializable{
     @Column (name = "nom_comida")
     private String nomComida;
 
-    public comidaEntity() {
-    }
-    
     public Long getIdComida() {
         return idComida;
     }

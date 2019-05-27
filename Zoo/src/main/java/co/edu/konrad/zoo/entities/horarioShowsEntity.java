@@ -20,25 +20,25 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 public class horarioShowsEntity implements Serializable {
-    
-        @Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_Hora_Shows")
     private Long idHoraShows;
 
-    @Column (name = "disponibilidad")
+    @Column(name = "disponibilidad")
     private boolean disponibilidad;
 
     @ManyToOne
-    @JoinColumn (name = "id_Lugar")
+    @JoinColumn(name = "id_Lugar")
     private lugarEntity idLugar;
-   
+
     @ManyToOne
-    @JoinColumn (name = "id_show")
+    @JoinColumn(name = "id_show")
     private ShowEntity idShow;
 
     public horarioShowsEntity() {
-    
+
     }
 
     public Long getIdHoraShows() {
@@ -57,8 +57,6 @@ public class horarioShowsEntity implements Serializable {
         this.disponibilidad = disponibilidad;
     }
 
-
-
     public lugarEntity getIdLugar() {
         return idLugar;
     }
@@ -74,6 +72,5 @@ public class horarioShowsEntity implements Serializable {
     public void setIdShow(ShowEntity idShow) {
         this.idShow = idShow;
     }
-
 
 }

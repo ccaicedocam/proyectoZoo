@@ -30,11 +30,11 @@ public class ApplicationConfig extends Application{
         resources.add(co.edu.konrad.zoo.resources.ComidaAnimalResources.class);
         resources.add(co.edu.konrad.zoo.resources.comidaResources.class);
         resources.add(co.edu.konrad.zoo.resources.cuidadoAnimalResources.class);
-        resources.add(co.edu.konrad.zoo.resources.empleadoResources.class);
         resources.add(co.edu.konrad.zoo.resources.horarioShowResources.class);
         resources.add(co.edu.konrad.zoo.resources.lugarResources.class);
         resources.add(co.edu.konrad.zoo.resources.ratingResources.class);
         resources.add(co.edu.konrad.zoo.resources.showAnimalResources.class);
         resources.add(co.edu.konrad.zoo.resources.showResources.class);
+        resources.add(co.edu.konrad.zoo.resources.empleadoResources.class);
     }
 }

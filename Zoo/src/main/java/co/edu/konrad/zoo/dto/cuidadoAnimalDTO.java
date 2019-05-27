@@ -15,9 +15,9 @@ import java.util.List;
  */
 public class cuidadoAnimalDTO {
 
-    private long idCuidador;
+    private Long idCuidador;
 
-    private long idAnimal;
+    private Long idAnimal;
 
     private String idEmpleado;
 
@@ -25,7 +25,7 @@ public class cuidadoAnimalDTO {
         return idCuidador;
     }
 
-    public void setIdcuidadoAnimal(int idcuidadoAnimal) {
+    public void setIdcuidadoAnimal(Long idcuidadoAnimal) {
         this.idCuidador = idcuidadoAnimal;
     }
 

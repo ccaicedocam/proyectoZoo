@@ -24,11 +24,11 @@ public class cuidadoAnimalEntity implements Serializable{
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     @Column (name ="id_cuidador_animal")
-    private long idCuidador;
+    private Long idCuidador;
     
     @ManyToOne
     @JoinColumn(name ="id_animal")
-    private long idAnimal;
+    private Long idAnimal;
     
     @Column (name ="id_empleado")
     private String idEmpleado;
@@ -37,7 +37,7 @@ public class cuidadoAnimalEntity implements Serializable{
         
     }
 
-    public cuidadoAnimalEntity(long idCuidador, long idAnimal, String idEmpleado) {
+    public cuidadoAnimalEntity(Long idCuidador, Long idAnimal, String idEmpleado) {
         this.idCuidador = idCuidador;
         this.idAnimal = idAnimal;
         this.idEmpleado = idEmpleado;
@@ -45,19 +45,43 @@ public class cuidadoAnimalEntity implements Serializable{
 
 
     
-    public long getIdCuidador() {
+//    public long getIdCuidador() {
+//        return idCuidador;
+//    }
+//
+//    public void setIdCuidador(long idCuidador) {
+//        this.idCuidador = idCuidador;
+//    }
+//
+//    public long getIdAnimal() {
+//        return idAnimal;
+//    }
+//
+//    public void setIdAnimal(long idAnimal) {
+//        this.idAnimal = idAnimal;
+//    }
+//
+//    public String getIdEmpleado() {
+//        return idEmpleado;
+//    }
+//
+//    public void setIdEmpleado(String idEmpleado) {
+//        this.idEmpleado = idEmpleado;
+//    }
+
+    public Long getIdCuidador() {
         return idCuidador;
     }
 
-    public void setIdCuidador(long idCuidador) {
+    public void setIdCuidador(Long idCuidador) {
         this.idCuidador = idCuidador;
     }
 
-    public long getIdAnimal() {
+    public Long getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(long idAnimal) {
+    public void setIdAnimal(Long idAnimal) {
         this.idAnimal = idAnimal;
     }
 
@@ -68,6 +92,8 @@ public class cuidadoAnimalEntity implements Serializable{
     public void setIdEmpleado(String idEmpleado) {
         this.idEmpleado = idEmpleado;
     }
+    
+    
     
     
 }

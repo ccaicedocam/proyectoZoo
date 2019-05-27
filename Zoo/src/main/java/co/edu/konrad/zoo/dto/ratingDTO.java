@@ -16,11 +16,11 @@ import java.util.List;
  */
 public class ratingDTO {
 
-    private long idRaring;
+    private Long idRaring;
 
-    private int idAnimal;
+    private Long idAnimal;
 
-    private long idShow;
+    private Long idShow;
 
     private String tipo;
 
@@ -28,27 +28,27 @@ public class ratingDTO {
 
     private String comentario;
 
-    public long getIdRaring() {
+    public Long getIdRaring() {
         return idRaring;
     }
 
-    public void setIdRaring(long idRaring) {
+    public void setIdRaring(Long idRaring) {
         this.idRaring = idRaring;
     }
 
-    public int getIdAnimal() {
+    public Long getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(int idAnimal) {
+    public void setIdAnimal(Long idAnimal) {
         this.idAnimal = idAnimal;
     }
 
-    public long getIdShow() {
+    public Long getIdShow() {
         return idShow;
     }
 
-    public void setIdShow(long idShow) {
+    public void setIdShow(Long idShow) {
         this.idShow = idShow;
     }
 
@@ -75,6 +75,56 @@ public class ratingDTO {
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
+    
+    
+
+//    public long getIdRaring() {
+//        return idRaring;
+//    }
+//
+//    public void setIdRaring(long idRaring) {
+//        this.idRaring = idRaring;
+//    }
+//
+//    public int getIdAnimal() {
+//        return idAnimal;
+//    }
+//
+//    public void setIdAnimal(int idAnimal) {
+//        this.idAnimal = idAnimal;
+//    }
+//
+//    public long getIdShow() {
+//        return idShow;
+//    }
+//
+//    public void setIdShow(long idShow) {
+//        this.idShow = idShow;
+//    }
+//
+//    public String getTipo() {
+//        return tipo;
+//    }
+//
+//    public void setTipo(String tipo) {
+//        this.tipo = tipo;
+//    }
+//
+//    public int getCalificacion() {
+//        return calificacion;
+//    }
+//
+//    public void setCalificacion(int calificacion) {
+//        this.calificacion = calificacion;
+//    }
+//
+//    public String getComentario() {
+//        return comentario;
+//    }
+//
+//    public void setComentario(String comentario) {
+//        this.comentario = comentario;
+//    }
 
     public ratingDTO(ratingEntity anim) {
 

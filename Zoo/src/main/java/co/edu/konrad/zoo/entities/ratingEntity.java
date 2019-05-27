@@ -28,10 +28,10 @@ public class ratingEntity implements Serializable{
     
     @ManyToOne
     @JoinColumn (name = "id_animal")
-    private int idAnimal;
+    private Long idAnimal;
     
     @Column (name = "id_show")
-    private long idShow;
+    private Long idShow;
     
     @Column (name = "tipo")
     private String tipo;
@@ -50,15 +50,15 @@ public class ratingEntity implements Serializable{
         return idRaring;
     }
 
-    public void setIdRaring(long idRaring) {
+    public void setIdRaring(Long idRaring) {
         this.idRaring = idRaring;
     }
 
-    public int getIdAnimal() {
+    public Long getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(int idAnimal) {
+    public void setIdAnimal(Long idAnimal) {
         this.idAnimal = idAnimal;
     }
 
@@ -66,7 +66,7 @@ public class ratingEntity implements Serializable{
         return idShow;
     }
 
-    public void setIdShow(long idShow) {
+    public void setIdShow(Long idShow) {
         this.idShow = idShow;
     }
 

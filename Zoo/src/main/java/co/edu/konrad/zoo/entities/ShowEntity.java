@@ -6,11 +6,15 @@
 package co.edu.konrad.zoo.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -29,10 +33,12 @@ public class ShowEntity implements Serializable{
     private String Idnombre;
     
     @Column (name = "Idhora")
-    private String Idhora;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date Idhora;
     
-    @Column (name = "IdEmpleado")
-    private String IdEmpleado;
+    @ManyToOne
+    @JoinColumn(name ="id_cod_empleado")
+    private empleadoEntity idCodEmpleado;
 
     /**
      * Constructor
@@ -49,21 +55,25 @@ public class ShowEntity implements Serializable{
         this.Idnombre = Idnombre;
     }
 
-    public String getIdhora() {
+    public Date getIdhora() {
         return Idhora;
     }
 
-    public void setIdhora(String Idhora) {
+    public void setIdhora(Date Idhora) {
         this.Idhora = Idhora;
     }
 
-    public String getIdEmpleado() {
-        return IdEmpleado;
+    public empleadoEntity getIdCodEmpleado() {
+        return idCodEmpleado;
     }
 
-    public void setIdEmpleado(String IdEmpleado) {
-        this.IdEmpleado = IdEmpleado;
+    public void setIdCodEmpleado(empleadoEntity idCodEmpleado) {
+        this.idCodEmpleado = idCodEmpleado;
     }
+
+
+
+
 
     public Long getIdShow() {
         return idShow;

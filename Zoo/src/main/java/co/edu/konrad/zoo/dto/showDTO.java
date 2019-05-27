@@ -6,7 +6,9 @@
 package co.edu.konrad.zoo.dto;
 
 import co.edu.konrad.zoo.entities.ShowEntity;
+import co.edu.konrad.zoo.entities.empleadoEntity;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 /**
  *
@@ -15,8 +17,8 @@ import java.util.List;
 public class showDTO {
     private Long idShow;
     private String Idnombre;
-    private String Idhora;
-    private String IdEmpleado;
+    private Date Idhora;
+    private empleadoEntity IdEmpleado;
 
     public Long getIdShow() {
         return idShow;
@@ -34,19 +36,19 @@ public class showDTO {
         this.Idnombre = Idnombre;
     }
 
-    public String getIdhora() {
+    public Date getIdhora() {
         return Idhora;
     }
 
-    public void setIdhora(String Idhora) {
+    public void setIdhora(Date Idhora) {
         this.Idhora = Idhora;
     }
 
-    public String getIdEmpleado() {
+    public empleadoEntity getIdEmpleado() {
         return IdEmpleado;
     }
 
-    public void setIdEmpleado(String IdEmpleado) {
+    public void setIdEmpleado(empleadoEntity IdEmpleado) {
         this.IdEmpleado = IdEmpleado;
     }
 
@@ -54,7 +56,7 @@ public class showDTO {
         this.idShow = sho.getIdShow();
         this.Idnombre = sho.getIdnombre();
         this.Idhora = sho.getIdhora();
-        this.IdEmpleado = sho.getIdEmpleado();
+        this.IdEmpleado = sho.getIdCodEmpleado();
     }
     
         public ShowEntity toEntity(){
@@ -62,7 +64,7 @@ public class showDTO {
         showentity.setIdShow(idShow);
         showentity.setIdnombre(Idnombre);
         showentity.setIdhora(Idhora);
-        showentity.setIdEmpleado(IdEmpleado);
+        showentity.setIdCodEmpleado(IdEmpleado);
         return showentity;
     }   
         

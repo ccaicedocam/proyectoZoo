@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package co.edu.konrad.zoo.dto;
+import co.edu.konrad.zoo.entities.ShowEntity;
 import co.edu.konrad.zoo.entities.horarioShowsEntity;
+import co.edu.konrad.zoo.entities.lugarEntity;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -13,9 +15,9 @@ import java.util.List;
  */
 public class horarioShowDTO {
     private Long idHoraShows;
-    private String disponibilidad;
-    private String idLugar;
-    private String idShow; 
+    private boolean disponibilidad;
+    private lugarEntity idLugar;
+    private ShowEntity idShow; 
 
     public Long getIdHoraShows() {
         return idHoraShows;
@@ -25,33 +27,37 @@ public class horarioShowDTO {
         this.idHoraShows = idHoraShows;
     }
 
-    public String getDisponibilidad() {
+    public boolean isDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
+    public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 
-    public String getIdLugar() {
+
+
+    public lugarEntity getIdLugar() {
         return idLugar;
     }
 
-    public void setIdLugar(String idLugar) {
+    public void setIdLugar(lugarEntity idLugar) {
         this.idLugar = idLugar;
     }
 
-    public String getIdShow() {
+    public ShowEntity getIdShow() {
         return idShow;
     }
 
-    public void setIdShow(String idShow) {
+    public void setIdShow(ShowEntity idShow) {
         this.idShow = idShow;
     }
 
+
+
     public horarioShowDTO(horarioShowsEntity hor) {
         this.idHoraShows = hor.getIdHoraShows();
-        this.disponibilidad = hor.getDisponibilidad();
+        this.disponibilidad = hor.isDisponibilidad();
         this.idLugar = hor.getIdLugar();
         this.idShow = hor.getIdShow();
     }

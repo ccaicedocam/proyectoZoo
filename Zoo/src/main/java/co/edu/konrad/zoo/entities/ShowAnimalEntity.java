@@ -29,11 +29,11 @@ public class ShowAnimalEntity implements Serializable{
     
     @ManyToOne
     @JoinColumn (name = "id_show")
-    private Long idShow;
+    private ShowEntity idShow;
     
     @ManyToOne
     @JoinColumn (name = "id_animal")
-    private Long idAnimal;
+    private AnimalEntity idAnimal;
 
     public Long getShowAnimal() {
         return idShowAnimal;
@@ -43,19 +43,29 @@ public class ShowAnimalEntity implements Serializable{
         this.idShowAnimal = showAnimal;
     }
 
-    public Long getIdShow() {
+    public Long getIdShowAnimal() {
+        return idShowAnimal;
+    }
+
+    public void setIdShowAnimal(Long idShowAnimal) {
+        this.idShowAnimal = idShowAnimal;
+    }
+
+    public ShowEntity getIdShow() {
         return idShow;
     }
 
-    public void setIdShow(Long idShow) {
+    public void setIdShow(ShowEntity idShow) {
         this.idShow = idShow;
     }
 
-    public Long getIdAnimal() {
+    public AnimalEntity getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(Long idAnimal) {
+    public void setIdAnimal(AnimalEntity idAnimal) {
         this.idAnimal = idAnimal;
     }
+
+
 }

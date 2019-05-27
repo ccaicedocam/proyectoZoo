@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -25,13 +27,15 @@ public class horarioShowsEntity implements Serializable {
     private Long idHoraShows;
 
     @Column (name = "disponibilidad")
-    private String disponibilidad;
+    private boolean disponibilidad;
 
-    @Column (name = "id_Lugar")
-    private String idLugar;
-
-    @Column (name = "id_Show")
-    private String idShow;
+    @ManyToOne
+    @JoinColumn (name = "id_Lugar")
+    private lugarEntity idLugar;
+   
+    @ManyToOne
+    @JoinColumn (name = "id_show")
+    private ShowEntity idShow;
 
     public horarioShowsEntity() {
     
@@ -45,27 +49,31 @@ public class horarioShowsEntity implements Serializable {
         this.idHoraShows = idHoraShows;
     }
 
-    public String getDisponibilidad() {
+    public boolean isDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
+    public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 
-    public String getIdLugar() {
+
+
+    public lugarEntity getIdLugar() {
         return idLugar;
     }
 
-    public void setIdLugar(String idLugar) {
+    public void setIdLugar(lugarEntity idLugar) {
         this.idLugar = idLugar;
     }
 
-    public String getIdShow() {
+    public ShowEntity getIdShow() {
         return idShow;
     }
 
-    public void setIdShow(String idShow) {
+    public void setIdShow(ShowEntity idShow) {
         this.idShow = idShow;
     }
+
+
 }

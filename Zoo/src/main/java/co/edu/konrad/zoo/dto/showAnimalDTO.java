@@ -5,7 +5,9 @@
  */
 package co.edu.konrad.zoo.dto;
 
+import co.edu.konrad.zoo.entities.AnimalEntity;
 import co.edu.konrad.zoo.entities.ShowAnimalEntity;
+import co.edu.konrad.zoo.entities.ShowEntity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,8 +18,8 @@ import java.util.List;
 public class showAnimalDTO {
     
     private Long showAnimal;
-    private Long idShow;
-    private Long idAnimal;
+    private ShowEntity idShow;
+    private AnimalEntity idAnimal;
 
     public Long getShowAnimal() {
         return showAnimal;
@@ -27,21 +29,23 @@ public class showAnimalDTO {
         this.showAnimal = showAnimal;
     }
 
-    public Long getIdShow() {
+    public ShowEntity getIdShow() {
         return idShow;
     }
 
-    public void setIdShow(Long idShow) {
+    public void setIdShow(ShowEntity idShow) {
         this.idShow = idShow;
     }
 
-    public Long getIdAnimal() {
+    public AnimalEntity getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(Long idAnimal) {
+    public void setIdAnimal(AnimalEntity idAnimal) {
         this.idAnimal = idAnimal;
     }
+
+
 
     public showAnimalDTO(ShowAnimalEntity sho) {
         this.idAnimal = sho.getIdAnimal();

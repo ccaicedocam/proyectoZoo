@@ -32,6 +32,11 @@ public class showAnimalPersistence {
       return sa.find(ShowAnimalEntity.class, id);
     }
     
+    public List<ShowAnimalEntity> encontrarTodos() {     
+    Query q = sa.createQuery("select u from ShowAnimalEntity u");     
+    return q.getResultList();   
+    }
+    
     //permite insertar datos a la tabla prodcuto retornando el mismo producto
     public ShowAnimalEntity insertar(ShowAnimalEntity entity){
      sa.persist(entity);
@@ -44,7 +49,7 @@ public class showAnimalPersistence {
     }
     
     public void eliminar(Long id){
-        ShowAnimalEntity showAnimalEliminar = sa.find(ShowAnimalEntity.class, id);
-      sa.remove(showAnimalEliminar);   
+    ShowAnimalEntity showAnimalEliminar = sa.find(ShowAnimalEntity.class, id);
+    sa.remove(showAnimalEliminar);   
     }
 }

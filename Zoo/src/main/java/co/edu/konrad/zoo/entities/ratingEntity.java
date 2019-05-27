@@ -20,11 +20,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class ratingEntity implements Serializable{
-    
-//    @Id
-//    @Column (name = "id_rating")
-//    private long idRaring;
-    
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idRaring")

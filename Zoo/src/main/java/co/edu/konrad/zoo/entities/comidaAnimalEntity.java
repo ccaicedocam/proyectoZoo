@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -32,6 +33,7 @@ public class comidaAnimalEntity implements Serializable{
     private AnimalEntity idAnimal;
     
     @Column (name = "hora_comida")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date horaComida;
     
     @ManyToOne

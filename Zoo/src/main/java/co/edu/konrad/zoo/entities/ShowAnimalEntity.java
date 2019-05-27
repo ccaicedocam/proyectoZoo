@@ -18,7 +18,8 @@ import javax.persistence.ManyToOne;
  *
  * @author jorge
  */
-@Entity (name = "Show_animal")
+//@Entity (name = "Show_animal")
+@Entity
 public class ShowAnimalEntity implements Serializable{
     
     @Id

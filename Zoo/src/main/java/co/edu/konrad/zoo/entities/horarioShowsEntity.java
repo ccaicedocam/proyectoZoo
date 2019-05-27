@@ -16,7 +16,7 @@ import javax.persistence.Id;
  *
  * @author cristian_caicedo
  */
-@Entity (name = "horarioShows")
+@Entity
 public class horarioShowsEntity implements Serializable {
     
         @Id

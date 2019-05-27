@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package co.edu.konrad.zoo.entities;
-
-import co.edu.konrad.zoo.entities.AnimalEntity;
 import java.io.Serializable;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,11 +17,18 @@ import javax.persistence.ManyToOne;
  *
  * @author ASUS-PC
  */
+
+@Entity
 public class ratingEntity implements Serializable{
     
+//    @Id
+//    @Column (name = "id_rating")
+//    private long idRaring;
+    
     @Id
-    @Column (name = "id_rating")
-    private long idRaring;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "idRaring")
+    private Long idRaring;
     
     @ManyToOne
     @JoinColumn (name = "id_animal")

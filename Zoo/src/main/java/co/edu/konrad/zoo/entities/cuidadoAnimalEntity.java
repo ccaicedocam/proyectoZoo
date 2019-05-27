@@ -31,18 +31,30 @@ public class cuidadoAnimalEntity implements Serializable{
     @JoinColumn(name ="id_animal")
     private Long idAnimal;
     
-    @Column (name ="id_empleado")
-    private String idEmpleado;
+//    @Column (name ="id_empleado")
+//    private String idEmpleado;
+    
+    @ManyToOne
+    @JoinColumn(name ="id_cod_empleado")
+    private Long idCodEmpleado;
+    
     
     public cuidadoAnimalEntity(){
         
     }
 
-    public cuidadoAnimalEntity(Long idCuidador, Long idAnimal, String idEmpleado) {
+//    public cuidadoAnimalEntity(Long idCuidador, Long idAnimal, String idEmpleado) {
+//        this.idCuidador = idCuidador;
+//        this.idAnimal = idAnimal;
+//        this.idCodEmpleado = idCodEmpleado;
+//    }
+
+    public cuidadoAnimalEntity(Long idCuidador, Long idAnimal, Long idCodEmpleado) {
         this.idCuidador = idCuidador;
         this.idAnimal = idAnimal;
-        this.idEmpleado = idEmpleado;
+        this.idCodEmpleado = idCodEmpleado;
     }
+    
 
     public Long getIdCuidador() {
         return idCuidador;
@@ -60,12 +72,22 @@ public class cuidadoAnimalEntity implements Serializable{
         this.idAnimal = idAnimal;
     }
 
-    public String getIdEmpleado() {
-        return idEmpleado;
+//    public String getIdEmpleado() {
+//        return idEmpleado;
+//    }
+//
+//    public void setIdEmpleado(String idEmpleado) {
+//        this.idEmpleado = idEmpleado;
+//    }  
+
+    public Long getIdCodEmpleado() {
+        return idCodEmpleado;
     }
 
-    public void setIdEmpleado(String idEmpleado) {
-        this.idEmpleado = idEmpleado;
-    }  
+    public void setIdCodEmpleado(Long idCodEmpleado) {
+        this.idCodEmpleado = idCodEmpleado;
+    }
+    
+    
     
 }

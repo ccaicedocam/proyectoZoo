@@ -19,7 +19,7 @@ public class cuidadoAnimalDTO {
 
     private Long idAnimal;
 
-    private String idEmpleado;
+    private Long idEmpleado;
 
     public long getIdcuidadoAnimal() {
         return idCuidador;
@@ -37,25 +37,25 @@ public class cuidadoAnimalDTO {
         this.idAnimal = idAnimal;
     }
 
-    public String getIdEmpleado() {
+    public Long getIdEmpleado() {
         return idEmpleado;
     }
 
-    public void setIdEmpleado(String idEmpleado) {
+    public void setIdEmpleado(Long idEmpleado) {
         this.idEmpleado = idEmpleado;
     }    
 
     public cuidadoAnimalDTO(cuidadoAnimalEntity anim) {
         this.idCuidador = anim.getIdCuidador();
         this.idAnimal = anim.getIdAnimal();
-        this.idEmpleado = anim.getIdEmpleado();
+        this.idEmpleado = anim.getIdCodEmpleado();
     }
 
     public cuidadoAnimalEntity toEntity() {
         cuidadoAnimalEntity animal = new cuidadoAnimalEntity();
         animal.setIdCuidador(this.idCuidador);
         animal.setIdAnimal(this.idAnimal);
-        animal.setIdEmpleado(this.idEmpleado);
+        animal.setIdCodEmpleado(this.idEmpleado);
         return animal;
     }
 

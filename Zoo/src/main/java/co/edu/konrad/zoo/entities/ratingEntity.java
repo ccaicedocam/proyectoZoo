@@ -46,7 +46,7 @@ public class ratingEntity implements Serializable{
         
     }
 
-    public long getIdRaring() {
+    public Long getIdRaring() {
         return idRaring;
     }
 
@@ -62,7 +62,7 @@ public class ratingEntity implements Serializable{
         this.idAnimal = idAnimal;
     }
 
-    public long getIdShow() {
+    public Long getIdShow() {
         return idShow;
     }
 

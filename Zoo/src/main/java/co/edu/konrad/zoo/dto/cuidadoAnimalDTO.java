@@ -21,7 +21,7 @@ public class cuidadoAnimalDTO {
 
     private Long idEmpleado;
 
-    public long getIdcuidadoAnimal() {
+    public Long getIdcuidadoAnimal() {
         return idCuidador;
     }
 
@@ -29,11 +29,11 @@ public class cuidadoAnimalDTO {
         this.idCuidador = idcuidadoAnimal;
     }
 
-    public long getIdAnimal() {
+    public Long getIdAnimal() {
         return idAnimal;
     }
 
-    public void setIdAnimal(long idAnimal) {
+    public void setIdAnimal(Long idAnimal) {
         this.idAnimal = idAnimal;
     }
 

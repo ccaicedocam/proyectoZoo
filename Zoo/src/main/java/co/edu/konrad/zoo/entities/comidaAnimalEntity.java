@@ -40,6 +40,9 @@ public class comidaAnimalEntity implements Serializable{
     @JoinColumn (name = "id_comida")
     private comidaEntity idComida;
 
+    public comidaAnimalEntity() {
+    }
+    
     public Long getIdComidaAnimal() {
         return idComidaAnimal;
     }

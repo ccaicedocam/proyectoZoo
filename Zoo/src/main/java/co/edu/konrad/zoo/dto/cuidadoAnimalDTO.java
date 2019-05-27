@@ -23,6 +23,9 @@ public class cuidadoAnimalDTO {
 
     private empleadoEntity idEmpleado;
 
+    public cuidadoAnimalDTO() {
+    }
+    
     public Long getIdcuidadoAnimal() {
         return idCuidador;
     }

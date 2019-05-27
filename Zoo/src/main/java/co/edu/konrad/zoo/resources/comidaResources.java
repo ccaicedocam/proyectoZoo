@@ -39,7 +39,7 @@ public class comidaResources {
     @GET
     public List<comidaDTO> getComidaList(){
         List <comidaEntity> comida = comidaLogic.obtenerComidas();
-        return comidaDTO.toAnimalList(comida);
+        return comidaDTO.toComidaList(comida);
     }
     
     /**

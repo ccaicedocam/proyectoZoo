@@ -26,6 +26,9 @@ public class comidaAnimalDTO {
     
     private comidaEntity idComida;
 
+    public comidaAnimalDTO() {
+    }
+    
     public Long getIdComidaAnimal() {
         return idComidaAnimal;
     }

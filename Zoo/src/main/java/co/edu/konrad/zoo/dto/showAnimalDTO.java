@@ -21,6 +21,9 @@ public class showAnimalDTO {
     private ShowEntity idShow;
     private AnimalEntity idAnimal;
 
+    public showAnimalDTO() {
+    }
+    
     public Long getShowAnimal() {
         return showAnimal;
     }

@@ -58,7 +58,7 @@ public class empleadoResources {
     }
     
     @POST
-    public empleadoDTO createAnimal(empleadoDTO empleadoDto){
+    public empleadoDTO createEmpleado(empleadoDTO empleadoDto){
         return new empleadoDTO(empleadosLogic.crearEmpleado(empleadoDto.toEntity()));
     }
     

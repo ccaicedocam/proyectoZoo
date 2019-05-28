@@ -9,7 +9,7 @@
             for (var i = 0; i < data.length; i++) {
                 var tableRow = $('<tr>');
                 // División de la fila
-                var nombreEmpleado = $('<td>');
+                var nomAnimal = $('<td>');
                 nomAnimal.tex(data[i].nomAnimal);
                 var nomCienfitico = $('<td>');
                 nomCienfitico.text(data[i].nomCienfitico);

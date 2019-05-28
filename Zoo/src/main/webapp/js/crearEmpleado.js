@@ -23,8 +23,8 @@
             var cargoEmpleado = $('#cargoEmpleado').val(data.cargoEmpleado);
             var id = data.id;
             $('#crearBoton').text("Actualizar").click(function (event) {
-                var nomEmpleado = $('#nomEmpleado').val();
-                var cargoEmpleado = $('#cargoEmpleado').val();
+                var nomEmpleado1 = $('#nomEmpleado').val();
+                var cargoEmpleado1 = $('#cargoEmpleado').val();
                 $.ajax({
                     method: 'PUT',
                     url: '/Zoo/api/empleados/' + id,
@@ -32,8 +32,8 @@
                     dataType: 'json',
                     data: JSON.stringify({
                         id:id,
-                        nomEmpleado: nomEmpleado,
-                        cargoEmpleado: cargoEmpleado                       
+                        nomEmpleado: nomEmpleado1,
+                        cargoEmpleado: cargoEmpleado1                       
                     })
                 }).done(function (data) {
                     window.location.href = '/Zoo';

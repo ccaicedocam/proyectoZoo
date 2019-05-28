@@ -48,16 +48,16 @@ public class empleadoDTO {
     }
     
      public empleadoDTO(empleadoEntity anim) {
-        this.cargoEmpleado = anim.getCargoEmpleado();
         this.idCodEmpleado = anim.getIdCodEmpleado();
         this.nomEmpleado = anim.getNomEmpleado();
+        this.cargoEmpleado = anim.getCargoEmpleado();
+                
     }
-
     public empleadoEntity toEntity() {
         empleadoEntity empleadoE = new empleadoEntity();
-        empleadoE.setCargoEmpleado(this.cargoEmpleado);
         empleadoE.setIdCodEmpleado(this.idCodEmpleado);
         empleadoE.setNomEmpleado(this.nomEmpleado);
+        empleadoE.setCargoEmpleado(this.cargoEmpleado);
         return empleadoE;
     }
     

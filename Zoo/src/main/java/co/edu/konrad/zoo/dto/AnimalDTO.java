@@ -74,21 +74,21 @@ public class AnimalDTO {
     
     public AnimalDTO(AnimalEntity anim){
         this.idAnimal = anim.getIdAnimal();
-        this.especia = anim.getEspecia();
         this.nomAnimal = anim.getNomAnimal();
         this.nomCienfitico = anim.getNomCienfitico();
+        this.especia = anim.getEspecia();
         this.tipoAnimal = anim.getTipoAnimal();
         this.descripcion = anim.getDescripcion();        
     }
     
     public AnimalEntity toEntity(){
         AnimalEntity animalEntity = new AnimalEntity();
-        animalEntity.setDescripcion(this.descripcion);
-        animalEntity.setEspecia(this.especia);
         animalEntity.setIdAnimal(this.idAnimal);
         animalEntity.setNomAnimal(this.nomAnimal);
         animalEntity.setNomCienfitico(this.nomCienfitico);
+        animalEntity.setEspecia(this.especia);
         animalEntity.setTipoAnimal(this.tipoAnimal);
+        animalEntity.setDescripcion(this.descripcion);
         return animalEntity;
     }
     

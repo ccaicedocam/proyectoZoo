@@ -51,7 +51,7 @@
             var cargoEmpleado = $('#cargoEmpleado').val();
             $.ajax({
                 method: 'POST',
-                url: '/Zoo/api/empleado',
+                url: '/Zoo/api/empleados',
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({

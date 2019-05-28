@@ -2,7 +2,7 @@
     $(document).ready(function (event) {
         $.ajax({
             method: 'GET',
-            url: '/Zoo/api/empleado',
+            url: '/Zoo/api/empleados',
             dataType: 'json',
             contentType: 'application/json'
         }).done(function (data) {
@@ -19,7 +19,7 @@
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
                 botonEliminar.text('Eliminar').attr('data-id', data[i].id);
                 botonEliminar.click(eliminar);
-                var botonActualizar = $('<a href="/zoo/crearEmpleado.html?id=' + data[i].id + '">').addClass('btn btn-primary');
+                var botonActualizar = $('<a href="/zoo/crearEmpleados.html?id=' + data[i].id + '">').addClass('btn btn-primary');
                 botonActualizar.text('Actualizar');
 
                 acciones.append(botonEliminar);
@@ -40,7 +40,7 @@
     function eliminar(event) {
         $.ajax({
             method: 'DELETE',
-            url: '/Zoo/api/empleado/' + $(this).attr('data-id'),
+            url: '/Zoo/api/empleados/' + $(this).attr('data-id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {

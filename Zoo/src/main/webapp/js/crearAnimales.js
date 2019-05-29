@@ -80,7 +80,7 @@
                 console.log(data);
                 console.log(data.especie);
                 console.log(data.nomCientifico);    
-                //window.location.href = '/Zoo';
+                window.location.href = '/Zoo';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });

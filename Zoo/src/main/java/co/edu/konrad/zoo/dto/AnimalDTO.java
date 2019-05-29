@@ -16,8 +16,8 @@ public class AnimalDTO {
     
     private Long idAnimal;
     private String nomAnimal;
-    private String nomCienfitico;
-    private String especia;
+    private String nomCientifico;
+    private String especie;
     private String tipoAnimal;
     private String descripcion;
 
@@ -41,19 +41,19 @@ public class AnimalDTO {
     }
 
     public String getNomCienfitico() {
-        return nomCienfitico;
+        return nomCientifico;
     }
 
     public void setNomCienfitico(String nomCienfitico) {
-        this.nomCienfitico = nomCienfitico;
+        this.nomCientifico = nomCienfitico;
     }
 
     public String getEspecia() {
-        return especia;
+        return especie;
     }
 
     public void setEspecia(String especia) {
-        this.especia = especia;
+        this.especie = especia;
     }
 
     public String getTipoAnimal() {
@@ -74,9 +74,9 @@ public class AnimalDTO {
     
     public AnimalDTO(AnimalEntity anim){
         this.idAnimal = anim.getIdAnimal();
-        this.especia = anim.getEspecia();
+        this.especie = anim.getEspecie();
         this.nomAnimal = anim.getNomAnimal();
-        this.nomCienfitico = anim.getNomCienfitico();
+        this.nomCientifico = anim.getNomCientifico();
         this.tipoAnimal = anim.getTipoAnimal();
         this.descripcion = anim.getDescripcion();        
     }
@@ -84,10 +84,10 @@ public class AnimalDTO {
     public AnimalEntity toEntity(){
         AnimalEntity animalEntity = new AnimalEntity();
         animalEntity.setDescripcion(this.descripcion);
-        animalEntity.setEspecia(this.especia);
+        animalEntity.setEspecie(this.especie);
         animalEntity.setIdAnimal(this.idAnimal);
         animalEntity.setNomAnimal(this.nomAnimal);
-        animalEntity.setNomCienfitico(this.nomCienfitico);
+        animalEntity.setNomCientifico(this.nomCientifico);
         animalEntity.setTipoAnimal(this.tipoAnimal);
         return animalEntity;
     }

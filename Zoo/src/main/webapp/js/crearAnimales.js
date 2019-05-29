@@ -26,11 +26,11 @@
             var descripcion = $('#descripcion').val(data.descripcion);
             var id = data.id;
             $('#crearBoton').text("Actualizar").click(function (event) {
-                var nomAnimal = $('#nomAnimal').val(data.nomAnimal);
-                var nomCientifico = $('#nomCientifico').val(data.nomCientifico);
-                var especie = $('#especie').val(data.especie);
-                var tipoAnimal = $('#tipoAnimal').val(data.tipoAnimal);
-                var descripcion = $('#descripcion').val(data.descripcion);
+                var nomAnimal1 = $('#nomAnimal').val();
+                var nomCientifico1 = $('#nomCientifico').val();
+                var especie1 = $('#especie').val();
+                var tipoAnimal1 = $('#tipoAnimal').val();
+                var descripcion1 = $('#descripcion').val();
                 $.ajax({
                     method: 'PUT',
                     url: '/Zoo/api/animales/' + id,
@@ -38,13 +38,14 @@
                     dataType: 'json',
                     data: JSON.stringify({
                         id: id,
-                        nomAnimal: nomAnimal,
-                        nomCientifico: nomCientifico,
-                        especie : especie,
-                        tipoAnimal :tipoAnimal,
-                        descripcion :descripcion
+                        nomAnimal: nomAnimal1,
+                        nomCientifico: nomCientifico1,
+                        especie : especie1,
+                        tipoAnimal :tipoAnimal1,
+                        descripcion :descripcion1
                     })
-                }).done(function (data) {
+                }).done(function (data){ 
+                    console.log(data);
                     window.location.href = '/Zoo';
                 }).fail(function (xhr, status, error) {
                     console.log.error;

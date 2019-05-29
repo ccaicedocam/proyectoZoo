@@ -11,8 +11,8 @@
                 // División de la fila
                 var nomAnimal = $('<td>');
                 nomAnimal.tex(data[i].nomAnimal);
-                var nomCienfitico = $('<td>');
-                nomCienfitico.text(data[i].nomCienfitico);
+                var nomCientifico = $('<td>');
+                nomCientifico.text(data[i].nomCientifico);
                 var especie = $('<td>');
                 especie.text(data[i].especie);
                 var tipoAnimal = $('<td>');
@@ -24,20 +24,20 @@
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
                 botonEliminar.text('Eliminar').attr('data-id', data[i].id);
                 botonEliminar.click(eliminar);
-                var botonActualizar = $('<a href="/Zoo/crearAnimal.html?id=' + data[i].id + '">').addClass('btn btn-primary');
+                var botonActualizar = $('<a href="/Zoo/crearAnimales.html?id=' + data[i].id + '">').addClass('btn btn-primary');
                 botonActualizar.text('Actualizar');
 
                 acciones.append(botonEliminar);
                 acciones.append(botonActualizar);
 
                 tableRow.append(nomAnimal);
-                tableRow.append(nomCienfitico);
+                tableRow.append(nomCientifico);
                 tableRow.append(especie);
                 tableRow.append(tipoAnimal);
                 tableRow.append(descripcion);
                 tableRow.append(acciones);
 
-                $('#tableAnimales table tbody').append(tableRow);
+                $('#tableAnimal table tbody').append(tableRow);
             }
             console.log(data);
         }).fail(function (xhr, status, error) {

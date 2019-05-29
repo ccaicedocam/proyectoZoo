@@ -14,7 +14,7 @@
 
     if (getUrlParameter('id{')) {
         $.ajax({
-            method:'GET',
+            method: 'GET',
             url: '/zoo/api/animales/' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
@@ -26,11 +26,19 @@
             var descripcion = $('#descripcion').val(data.descripcion);
             var id = data.id;
             $('#crearBoton').text("Actualizar").click(function (event) {
+<<<<<<< HEAD
                 var nomAnimal1 = $('#nomAnimal').val(data.nomAnimal);
                 var nomCientifico1 = $('#nomCientifico').val(data.nomCientifico);
                 var especie1 = $('#especie').val(data.especie);
                 var tipoAnimal1 = $('#tipoAnimal').val(data.tipoAnimal);
                 var descripcion1 = $('#descripcion').val(data.descripcion);
+=======
+                var nomAnimal1 = $('#nomAnimal').val();
+                var nomCientifico1 = $('#nomCientifico').val();
+                var especie1 = $('#especie').val();
+                var tipoAnimal1 = $('#tipoAnimal').val();
+                var descripcion1 = $('#descripcion').val();
+>>>>>>> cd013af5b2e966849707c41246beeb51957300bb
                 $.ajax({
                     method: 'PUT',
                     url: '/Zoo/api/animales/' + id,
@@ -40,11 +48,18 @@
                         id: id,
                         nomAnimal: nomAnimal1,
                         nomCientifico: nomCientifico1,
+<<<<<<< HEAD
                         especie : especie1,
                         tipoAnimal :tipoAnimal1,
                         descripcion :descripcion1
+=======
+                        especie: especie1,
+                        tipoAnimal: tipoAnimal1,
+                        descripcion: descripcion1
+>>>>>>> cd013af5b2e966849707c41246beeb51957300bb
                     })
                 }).done(function (data) {
+                    console.log(data);
                     window.location.href = '/Zoo';
                 }).fail(function (xhr, status, error) {
                     console.log.error;
@@ -56,28 +71,32 @@
         });
     } else {
         $('#crearBoton').click(function (event) {
-                var nomAnimal = $('#nomAnimal').val();
-                var nomCientifico = $('#nomCientifico').val();
-                var especie = $('#especie').val();
-                var tipoAnimal = $('#tipoAnimal').val();
-                var descripcion = $('#descripcion').val();
-            $.ajax({                
+            var nomAnimal = $('#nomAnimal').val();
+            var nomCientifico = $('#nomCientifico').val();
+            var especie = $('#especie').val();
+            var tipoAnimal = $('#tipoAnimal').val();
+            var descripcion = $('#descripcion').val();
+            $.ajax({
                 method: 'POST',
                 url: '/Zoo/api/animales',
                 contentType: 'application/json',
-                dataType: 'json',                
+                dataType: 'json',
                 data: JSON.stringify({
-                        nomAnimal: nomAnimal,
-                        nomCientifico: nomCientifico,
-                        especie : especie,
-                        tipoAnimal :tipoAnimal,
-                        descripcion :descripcion
+                    nomCientifico: nomCientifico,
+                    nomAnimal: nomAnimal,
+                    especie: especie,
+                    tipoAnimal: tipoAnimal,
+                    descripcion: descripcion
                 })
             }).done(function (data) {
-                window.location.href = '/Zoo';
+                console.log(data);
+                console.log(data.especie);
+                console.log(data.nomCientifico);    
+                //window.location.href = '/Zoo';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });
         });
-    }
+    };
+    
 })(jQuery);

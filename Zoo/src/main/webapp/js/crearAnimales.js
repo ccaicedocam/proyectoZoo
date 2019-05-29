@@ -15,7 +15,7 @@
     if (getUrlParameter('id{')) {
         $.ajax({
             method: 'GET',
-            url: '/zoo/api/animales/' + getUrlParameter('id'),
+            url: '/Zoo/api/animales/' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {

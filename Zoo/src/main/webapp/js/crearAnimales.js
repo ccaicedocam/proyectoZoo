@@ -14,7 +14,7 @@
 
     if (getUrlParameter('id{')) {
         $.ajax({
-            method:'GET',
+            method: 'GET',
             url: '/zoo/api/animales/' + getUrlParameter('id'),
             contentType: 'application/json',
             dataType: 'json'
@@ -40,11 +40,11 @@
                         id: id,
                         nomAnimal: nomAnimal1,
                         nomCientifico: nomCientifico1,
-                        especie : especie1,
-                        tipoAnimal :tipoAnimal1,
-                        descripcion :descripcion1
+                        especie: especie1,
+                        tipoAnimal: tipoAnimal1,
+                        descripcion: descripcion1
                     })
-                }).done(function (data){ 
+                }).done(function (data) {
                     console.log(data);
                     window.location.href = '/Zoo';
                 }).fail(function (xhr, status, error) {
@@ -57,28 +57,32 @@
         });
     } else {
         $('#crearBoton').click(function (event) {
-                var nomAnimal = $('#nomAnimal').val();
-                var nomCientifico = $('#nomCientifico').val();
-                var especie = $('#especie').val();
-                var tipoAnimal = $('#tipoAnimal').val();
-                var descripcion = $('#descripcion').val();
-            $.ajax({                
+            var nomAnimal = $('#nomAnimal').val();
+            var nomCientifico = $('#nomCientifico').val();
+            var especie = $('#especie').val();
+            var tipoAnimal = $('#tipoAnimal').val();
+            var descripcion = $('#descripcion').val();
+            $.ajax({
                 method: 'POST',
                 url: '/Zoo/api/animales',
                 contentType: 'application/json',
-                dataType: 'json',                
+                dataType: 'json',
                 data: JSON.stringify({
-                        nomAnimal: nomAnimal,
-                        nomCientifico: nomCientifico,
-                        especie : especie,
-                        tipoAnimal :tipoAnimal,
-                        descripcion :descripcion
+                    nomCientifico: nomCientifico,
+                    nomAnimal: nomAnimal,
+                    especie: especie,
+                    tipoAnimal: tipoAnimal,
+                    descripcion: descripcion
                 })
             }).done(function (data) {
-                window.location.href = '/Zoo';
+                console.log(data);
+                console.log(data.especie);
+                console.log(data.nomCientifico);    
+                //window.location.href = '/Zoo';
             }).fail(function (xhr, status, error) {
                 console.log(error);
             });
         });
-    }
+    };
+    
 })(jQuery);

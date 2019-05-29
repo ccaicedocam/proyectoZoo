@@ -58,16 +58,16 @@ public class AnimalEntity implements Serializable {
         return nomCientifico;
     }
 
-    public void setNomCientifico(String nomCienfitico) {
-        this.nomCientifico = nomCienfitico;
+    public void setNomCientifico(String nomCientifico) {
+        this.nomCientifico = nomCientifico;
     }
 
     public String getEspecie() {
         return especie;
     }
 
-    public void setEspecie(String especia) {
-        this.especie = especia;
+    public void setEspecie(String especie) {
+        this.especie = especie;
     }
 
     public String getTipoAnimal() {

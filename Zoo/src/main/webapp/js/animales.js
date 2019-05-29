@@ -2,7 +2,7 @@
     $(document).ready(function (event) {
         $.ajax({
             method: 'GET',
-            url: '/zoo/api/animales',
+            url: '/Zoo/api/animales',
             dataType: 'json',
             contentType: 'application/json'
         }).done(function (data) {
@@ -10,7 +10,7 @@
                 var tableRow = $('<tr>');
                 // División de la fila
                 var nomAnimal = $('<td>');
-                nomAnimal.tex(data[i].nomAnimal);
+                nomAnimal.text(data[i].nomAnimal);
                 var nomCientifico = $('<td>');
                 nomCientifico.text(data[i].nomCientifico);
                 var especie = $('<td>');
@@ -22,9 +22,9 @@
 
                 var acciones = $('<td>');
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
-                botonEliminar.text('Eliminar').attr('data-id', data[i].id);
+                botonEliminar.text('Eliminar').attr('data-id', data[i].idAnimal);
                 botonEliminar.click(eliminar);
-                var botonActualizar = $('<a href="/Zoo/crearAnimales.html?id=' + data[i].id + '">').addClass('btn btn-primary');
+                var botonActualizar = $('<a href="/Zoo/crearAnimales.html?id=' + data[i].idAnimal + '">').addClass('btn btn-primary');
                 botonActualizar.text('Actualizar');
 
                 acciones.append(botonEliminar);

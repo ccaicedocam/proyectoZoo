@@ -40,20 +40,20 @@ public class AnimalDTO {
         this.nomAnimal = nomAnimal;
     }
 
-    public String getNomCienfitico() {
+    public String getNomCientifico() {
         return nomCientifico;
     }
 
-    public void setNomCienfitico(String nomCienfitico) {
-        this.nomCientifico = nomCienfitico;
+    public void setNomCientifico(String nomCientifico) {
+        this.nomCientifico = nomCientifico;
     }
 
-    public String getEspecia() {
+    public String getEspecie() {
         return especie;
     }
 
-    public void setEspecia(String especia) {
-        this.especie = especia;
+    public void setEspecie(String especie) {
+        this.especie = especie;
     }
 
     public String getTipoAnimal() {

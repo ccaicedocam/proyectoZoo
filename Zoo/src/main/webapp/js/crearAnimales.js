@@ -24,14 +24,14 @@
             var especie = $('#especie').val(data.especie);
             var tipoAnimal = $('#tipoAnimal').val(data.tipoAnimal);
             var descripcion = $('#descripcion').val(data.descripcion);
-            var id = data.id;
+            var id = data.idAnimal;
             $('#crearBoton').text("Actualizar").click(function (event) {
 
-                var nomAnimal1 = $('#nomAnimal').val(data.nomAnimal);
-                var nomCientifico1 = $('#nomCientifico').val(data.nomCientifico);
-                var especie1 = $('#especie').val(data.especie);
-                var tipoAnimal1 = $('#tipoAnimal').val(data.tipoAnimal);
-                var descripcion1 = $('#descripcion').val(data.descripcion);
+                var nomAnimal1 = $('#nomAnimal').val();
+                var nomCientifico1 = $('#nomCientifico').val();
+                var especie1 = $('#especie').val();
+                var tipoAnimal1 = $('#tipoAnimal').val();
+                var descripcion1 = $('#descripcion').val();
 
                 $.ajax({
                     method: 'PUT',
@@ -39,7 +39,7 @@
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({
-                        id: id,
+                        idAnimal: id,
                         nomAnimal: nomAnimal1,
                         nomCientifico: nomCientifico1,
                         especie : especie1,

@@ -24,7 +24,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author ASUS-PC
  */
-@Path("empleados")
+@Path("/empleados")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class empleadoResources {

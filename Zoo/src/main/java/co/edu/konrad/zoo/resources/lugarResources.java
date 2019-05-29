@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
  */
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Path("lugar")
+@Path("/lugar")
 public class lugarResources {
         
     @EJB

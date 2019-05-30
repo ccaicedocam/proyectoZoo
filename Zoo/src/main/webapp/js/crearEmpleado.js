@@ -21,7 +21,7 @@
         }).done(function (data) {
             var nomEmpleado = $('#nomEmpleado').val(data.nomEmpleado);
             var cargoEmpleado = $('#cargoEmpleado').val(data.cargoEmpleado);
-            var id = data.idCodEmpleado;
+            var id = data.id;
             $('#crearBoton').text("Actualizar").click(function (event) {
                 var nomEmpleado1 = $('#nomEmpleado').val();
                 var cargoEmpleado1 = $('#cargoEmpleado').val();
@@ -31,7 +31,7 @@
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({
-                        idCodEmpleado:id,
+                        id:id,
                         nomEmpleado: nomEmpleado1,
                         cargoEmpleado: cargoEmpleado1                       
                     })

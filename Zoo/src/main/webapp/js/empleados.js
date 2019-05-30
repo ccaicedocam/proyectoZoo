@@ -14,11 +14,12 @@
                 var cargoEmpleado = $('<td>');
                 cargoEmpleado.text(data[i].cargoEmpleado);
 
+
                 var acciones = $('<td>');
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
-                botonEliminar.text('Eliminar').attr('data-id', data[i].idCodEmpleado);
+                botonEliminar.text('Eliminar').attr('data-id', data[i].id);
                 botonEliminar.click(eliminar);
-                var botonActualizar = $('<a href="/Zoo/crearEmpleados.html?id=' + data[i].idCodEmpleado + '">').addClass('btn btn-primary');
+                var botonActualizar = $('<a href="/zoo/crearEmpleados.html?id=' + data[i].id + '">').addClass('btn btn-primary');
                 botonActualizar.text('Actualizar');
 
                 acciones.append(botonEliminar);

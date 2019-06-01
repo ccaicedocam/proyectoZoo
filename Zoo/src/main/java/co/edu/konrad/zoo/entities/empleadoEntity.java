@@ -57,4 +57,3 @@ public class empleadoEntity implements Serializable{
         this.cargoEmpleado = cargoEmpleado;
     }
 }
-

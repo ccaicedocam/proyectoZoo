@@ -14,9 +14,10 @@ import javax.persistence.Id;
 
 /**
  *
- * @author cristian_caicedo
+ * @author Jorge
  */
-@Entity (name = "Animal")
+//@Entity (name = "Animal")
+@Entity 
 public class AnimalEntity implements Serializable {
 
     @Id
@@ -28,10 +29,10 @@ public class AnimalEntity implements Serializable {
     private String nomAnimal;
     
     @Column (name = "nom_cientifico")
-    private String nomCienfitico;
+    private String nomCientifico;
     
     @Column (name = "especie")
-    private String especia;
+    private String especie;
     
     @Column (name = "Tipo_animal")
     private String tipoAnimal;
@@ -53,20 +54,20 @@ public class AnimalEntity implements Serializable {
         this.nomAnimal = nomAnimal;
     }
 
-    public String getNomCienfitico() {
-        return nomCienfitico;
+    public String getNomCientifico() {
+        return nomCientifico;
     }
 
-    public void setNomCienfitico(String nomCienfitico) {
-        this.nomCienfitico = nomCienfitico;
+    public void setNomCientifico(String nomCientifico) {
+        this.nomCientifico = nomCientifico;
     }
 
-    public String getEspecia() {
-        return especia;
+    public String getEspecie() {
+        return especie;
     }
 
-    public void setEspecia(String especia) {
-        this.especia = especia;
+    public void setEspecie(String especie) {
+        this.especie = especie;
     }
 
     public String getTipoAnimal() {

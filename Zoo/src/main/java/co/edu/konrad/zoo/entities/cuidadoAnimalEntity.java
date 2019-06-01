@@ -7,6 +7,7 @@ package co.edu.konrad.zoo.entities;
 
 import java.io.Serializable;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,28 +18,40 @@ import javax.persistence.ManyToOne;
  *
  * @author ASUS-PC
  */
+
+@Entity
 public class cuidadoAnimalEntity implements Serializable{
     
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     @Column (name ="id_cuidador_animal")
-    private long idCuidador;
+    private Long idCuidador;
     
     @ManyToOne
     @JoinColumn(name ="id_animal")
     private AnimalEntity idAnimal;
+      
+    @ManyToOne
+    @JoinColumn(name ="id_cod_empleado")
+    private empleadoEntity idCodEmpleado;
     
-    @Column (name ="id_empleado")
-    private String idEmpleado;
     
-    private cuidadoAnimalEntity(){
+    public cuidadoAnimalEntity(){
         
     }
-    public long getIdCuidador() {
+
+    public cuidadoAnimalEntity(Long idCuidador, AnimalEntity idAnimal, empleadoEntity idCodEmpleado) {
+        this.idCuidador = idCuidador;
+        this.idAnimal = idAnimal;
+        this.idCodEmpleado = idCodEmpleado;
+    }
+    
+
+    public Long getIdCuidador() {
         return idCuidador;
     }
 
-    public void setIdCuidador(long idCuidador) {
+    public void setIdCuidador(Long idCuidador) {
         this.idCuidador = idCuidador;
     }
 
@@ -50,13 +63,16 @@ public class cuidadoAnimalEntity implements Serializable{
         this.idAnimal = idAnimal;
     }
 
-    public String getIdEmpleado() {
-        return idEmpleado;
+    public empleadoEntity getIdCodEmpleado() {
+        return idCodEmpleado;
     }
 
-    public void setIdEmpleado(String idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public void setIdCodEmpleado(empleadoEntity idCodEmpleado) {
+        this.idCodEmpleado = idCodEmpleado;
     }
+
+   
+    
     
     
 }

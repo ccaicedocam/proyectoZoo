@@ -7,6 +7,7 @@ package co.edu.konrad.zoo.entities;
 
 import java.io.Serializable;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ import javax.persistence.Id;
  *
  * @author ASUS-PC
  */
+@Entity
 public class empleadoEntity implements Serializable{
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
@@ -27,7 +29,7 @@ public class empleadoEntity implements Serializable{
     @Column (name ="cargo_empleado")
     private String cargoEmpleado;
     
-    private empleadoEntity(){
+    public empleadoEntity(){
         
     }
 
@@ -54,6 +56,5 @@ public class empleadoEntity implements Serializable{
     public void setCargoEmpleado(String cargoEmpleado) {
         this.cargoEmpleado = cargoEmpleado;
     }
-    
-    
 }
+

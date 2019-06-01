@@ -8,7 +8,6 @@
         }).done(function (data) {
             for (var i = 0; i < data.length; i++) {
                 var tableRow = $('<tr>');
-                // División de la fila
                 var nomEmpleado = $('<td>');
                 nomEmpleado.text(data[i].nomEmpleado);
                 var cargoEmpleado = $('<td>');

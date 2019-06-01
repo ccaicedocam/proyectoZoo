@@ -10,7 +10,7 @@
                 var tableRow = $('<tr>');
                 // División de la fila
                 var nomComida = $('<td>');
-                nomComida.tex(data[i].nomAnimal);
+                nomComida.tex(data[i].nomComida);
 
                 var acciones = $('<td>');
                 var botonEliminar = $('<button>').addClass('btn btn-danger');

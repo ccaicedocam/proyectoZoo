@@ -74,7 +74,6 @@ public class AnimalDTO {
     
     public AnimalDTO(AnimalEntity anim){
         this.idAnimal = anim.getIdAnimal();
-
         this.nomAnimal = anim.getNomAnimal();
         this.nomCientifico = anim.getNomCientifico();
         this.especie = anim.getEspecie();

@@ -19,6 +19,10 @@ public class comidaDTO {
     
     private String nomComida;
 
+    public comidaDTO(){
+        
+    }
+    
     public Long getIdComida() {
         return idComida;
     }

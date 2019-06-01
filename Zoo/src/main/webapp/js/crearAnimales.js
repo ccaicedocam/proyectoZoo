@@ -24,14 +24,14 @@
             var especie = $('#especie').val(data.especie);
             var tipoAnimal = $('#tipoAnimal').val(data.tipoAnimal);
             var descripcion = $('#descripcion').val(data.descripcion);
-            var id = data.idAnimal;
+            var id = data.id;
             $('#crearBoton').text("Actualizar").click(function (event) {
 
-                var nomAnimal1 = $('#nomAnimal').val();
-                var nomCientifico1 = $('#nomCientifico').val();
-                var especie1 = $('#especie').val();
-                var tipoAnimal1 = $('#tipoAnimal').val();
-                var descripcion1 = $('#descripcion').val();
+                var nomAnimal1 = $('#nomAnimal').val(data.nomAnimal);
+                var nomCientifico1 = $('#nomCientifico').val(data.nomCientifico);
+                var especie1 = $('#especie').val(data.especie);
+                var tipoAnimal1 = $('#tipoAnimal').val(data.tipoAnimal);
+                var descripcion1 = $('#descripcion').val(data.descripcion);
 
                 $.ajax({
                     method: 'PUT',
@@ -39,7 +39,7 @@
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({
-                        idAnimal: id,
+                        id: id,
                         nomAnimal: nomAnimal1,
                         nomCientifico: nomCientifico1,
                         especie : especie1,
@@ -70,16 +70,13 @@
                 contentType: 'application/json',
                 dataType: 'json',
                 data: JSON.stringify({
-                    nomCientifico: nomCientifico,
                     nomAnimal: nomAnimal,
+                    nomCientifico: nomCientifico,
                     especie: especie,
                     tipoAnimal: tipoAnimal,
                     descripcion: descripcion
                 })
-            }).done(function (data) {
-                console.log(data);
-                console.log(data.especie);
-                console.log(data.nomCientifico);    
+            }).done(function (data) { 
                 window.location.href = '/Zoo';
             }).fail(function (xhr, status, error) {
                 console.log(error);

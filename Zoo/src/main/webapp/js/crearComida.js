@@ -19,13 +19,13 @@
             contentType: 'application/json',
             dataType: 'json'
         }).done(function (data) {
-            var nomcomida = $('#nomAnimal').val(data.nomcomida);
-            var id = data.id;
+            var nomcomida = $('#nomcomida').val(data.nomcomida);
+            var id = data.idComida;
             $('#crearBoton').text("Actualizar").click(function (event) {
                 var nomcomida = $('#nomcomida').val(data.nomcomida);
                 $.ajax({
                     method: 'PUT',
-                    url: '/Zoo/api/animal/' + id,
+                    url: '/Zoo/api/comida/' + id,
                     contentType: 'application/json',
                     dataType: 'json',
                     data: JSON.stringify({

@@ -22,9 +22,9 @@
 
                 var acciones = $('<td>');
                 var botonEliminar = $('<button>').addClass('btn btn-danger');
-                botonEliminar.text('Eliminar').attr('data-id', data[i].idAnimal);
+                botonEliminar.text('Eliminar').attr('data-id', data[i].id);
                 botonEliminar.click(eliminar);
-                var botonActualizar = $('<a href="/Zoo/crearAnimales.html?id=' + data[i].idAnimal + '">').addClass('btn btn-primary');
+                var botonActualizar = $('<a href="/Zoo/crearAnimales.html?id=' + data[i].id + '">').addClass('btn btn-primary');
                 botonActualizar.text('Actualizar');
 
                 acciones.append(botonEliminar);
